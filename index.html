@@ -4,19 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#174C9C">
-<meta name="description" content="5, 6, 7 ve 8. sınıf öğrencileri için sınav başarısını artırmayı hedefleyen anlayarak hızlı okuma eğitimi.">
-<title>Yazılı Hazırlık | Anlayarak Hızlı Okuma Eğitimi</title>
+<meta name="theme-color" content="#2798F5">
+<meta name="description" content="Yazılı Hazırlık - 5, 6, 7 ve 8. sınıf öğrencileri için anlayarak hızlı okuma eğitimi.">
+<title>Yazılı Hazırlık | Anlayarak Hızlı Okuma</title>
 
 <style>
 :root{
-  --blue:#174C9C;
-  --purple:#7955CB;
-  --yellow:#FFE18B;
-  --ink:#14213D;
-  --muted:#59677E;
-  --line:#DFE7F3;
-  --pale:#F5F8FF;
+  --blue:#168CF0;
+  --deep:#1264C8;
+  --sky:#54B9FF;
+  --purple:#8858E9;
+  --yellow:#FFD75E;
+  --ink:#152744;
+  --muted:#52647C;
+  --line:#DCEAF8;
+  --pale:#F3F9FF;
+  --green:#25D366;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -24,238 +27,407 @@ body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--ink);
-  background:white;
-  line-height:1.6;
+  line-height:1.65;
+  background:#fff;
 }
 a{text-decoration:none;color:inherit}
-.container{width:min(1140px,calc(100% - 40px));margin:auto}
+.container{width:min(1150px,calc(100% - 40px));margin:auto}
 header{
-  position:sticky;top:0;z-index:30;
+  position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.94);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #DCEAF8;
 }
 .nav{
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
+  min-height:84px;display:flex;
+  justify-content:space-between;align-items:center;gap:20px;
 }
-.brand{display:flex;align-items:center;gap:12px;color:var(--blue);font-weight:850;font-size:20px}
-.brand-icon{
-  width:43px;height:43px;border-radius:50%;
-  display:grid;place-items:center;background:#DFECFF;font-size:23px;
+.brand{display:flex;align-items:center;gap:12px;color:var(--deep);font-weight:850}
+.brand-logo{
+  width:62px;height:62px;border-radius:50%;
+  object-fit:cover;background:#DDEFFF;
 }
-.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:650}
+.brand-text{font-size:20px}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
 .button{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:14px 23px;border-radius:100px;
-  background:var(--blue);color:white;font-weight:750;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:11px;padding:15px 25px;
+  border:0;border-radius:100px;
+  color:white;font-weight:800;
+  background:linear-gradient(120deg,#168CF0,#51B7FF);
+  box-shadow:0 10px 25px #168cf033;
   transition:transform .25s,box-shadow .25s;
+  cursor:pointer;
 }
-.button:hover{transform:translateY(-3px);box-shadow:0 12px 28px #174c9c33}
-.button.light{background:white;color:var(--blue)}
-.button.outline{background:white;color:var(--blue);border:1px solid var(--line)}
-.button.whatsapp-button{background:#168C54}
-.button svg,.floating-whatsapp svg{width:22px;height:22px;fill:currentColor}
+.button:hover{transform:translateY(-4px);box-shadow:0 15px 32px #168cf04d}
+.button.green{
+  background:#25D366;
+  box-shadow:0 10px 24px #25d36635;
+  color:#073F22;
+}
+.button.white{background:#fff;color:var(--deep)}
+.wa-icon{width:24px;height:24px;flex-shrink:0}
 .hero{
-  padding:100px 0 100px;
+  padding:95px 0;
   overflow:hidden;
   background:
-    radial-gradient(circle at 86% 18%,#E8DEFF 0,transparent 29%),
-    radial-gradient(circle at 7% 75%,#E0EDFF 0,transparent 34%),
-    linear-gradient(180deg,#F9FBFF,#fff);
+    radial-gradient(circle at 90% 12%,#BDE6FF 0,transparent 35%),
+    radial-gradient(circle at 10% 85%,#E0D0FF 0,transparent 33%),
+    linear-gradient(150deg,#E9F7FF,#F7FBFF 65%,#FFF9E8);
 }
 .hero-grid{
-  display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-  align-items:center;gap:58px;
+  display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:65px;
 }
 .eyebrow{
-  display:inline-block;color:var(--blue);
-  font-size:13px;font-weight:850;letter-spacing:.09em;
-  text-transform:uppercase;
+  display:block;color:var(--deep);
+  font-size:14px;font-weight:850;
+  letter-spacing:.08em;text-transform:uppercase;
 }
 .hero h1{
-  margin:20px 0 26px;
-  font-size:clamp(47px,6vw,86px);
-  line-height:1.11;
-  letter-spacing:-.065em;
-  font-weight:850;
+  margin:24px 0;
+  font-size:clamp(48px,6.2vw,87px);
+  line-height:1.12;letter-spacing:-.065em;
+  font-weight:900;
 }
 .hero h1 span{display:block}
-.hero h1 .last{
+.hero h1 .blue-text{
   width:fit-content;max-width:100%;
-  color:var(--blue);
-  background:linear-gradient(100deg,#DFE9FF,#EEE3FF 75%,#FFF0B5);
-  border-radius:15px;
-  padding:2px 12px 9px;
+  color:var(--deep);
+  background:linear-gradient(95deg,#BCE3FF,#D7E9FF,#E5D8FF);
+  border-radius:15px;padding:2px 12px 10px;
   margin-left:-12px;
 }
 .hero-description{
-  max-width:600px;
-  color:var(--muted);font-size:19px;
-  margin:0 0 28px;
+  max-width:560px;
+  color:#405671;
+  font-size:20px;font-weight:550;
 }
 .teacher-profile{
-  position:relative;
-  padding:18px 18px 28px;
-  border-radius:32px;
-  border:1px solid #DFE6F5;
-  background:rgba(255,255,255,.94);
-  box-shadow:0 28px 70px #174c9c16;
+  padding:18px 18px 30px;
   text-align:center;
-}
-.teacher-profile:before{
-  content:"";position:absolute;z-index:-1;
-  inset:24px -14px -18px 24px;
-  border-radius:35px;
-  background:linear-gradient(145deg,#DCEAFF,#E9DFFF,#FFF0C2);
+  border:1px solid #D5E9FB;
+  border-radius:34px;
+  background:white;
+  box-shadow:0 25px 65px #168cf025;
 }
 .teacher-photo{
-  display:block;width:100%;height:370px;
-  object-fit:cover;object-position:center 25%;
-  border-radius:23px;
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  border-radius:24px;
 }
 .teacher-profile h2{
-  margin:22px 0 8px;color:var(--blue);
-  font-size:30px;letter-spacing:-.04em;
+  margin:20px 0 8px;
+  font-size:31px;color:var(--deep);
+  letter-spacing:-.04em;
 }
-.teacher-profile p{margin:4px 0;color:var(--muted);font-size:15px}
+.teacher-profile p{
+  margin:3px 0;
+  color:var(--muted);
+  font-size:15px;
+}
+.teacher-profile .button{margin-top:22px;width:100%}
 section{padding:100px 0}
-.section-head{max-width:850px;margin-bottom:44px}
+.soft{background:#F2F9FF}
+.section-head{max-width:900px;margin-bottom:43px}
 .section-head h2{
-  margin:12px 0 15px;
+  margin:13px 0 10px;
   font-size:clamp(35px,5vw,61px);
-  line-height:1.12;letter-spacing:-.055em;
+  line-height:1.13;letter-spacing:-.055em;
 }
-.section-head p{font-size:17px;color:var(--muted)}
-.soft{background:var(--pale)}
-.benefits-list{display:grid;gap:16px}
-.benefit{
-  display:flex;align-items:center;gap:25px;
-  padding:26px 30px;border-radius:24px;
-  border:1px solid var(--line);
-  background:white;
-  box-shadow:0 10px 35px #174c9c08;
-}
-.benefit-number{
-  flex:0 0 55px;
-  color:var(--blue);
-  font-size:29px;font-weight:850;
-  letter-spacing:-.05em;
-}
-.benefit p{
-  margin:0;font-size:clamp(19px,2.4vw,28px);
-  font-weight:650;line-height:1.4;letter-spacing:-.025em;
-}
+.section-head p{color:var(--muted);font-size:18px}
 .mark-blue{
-  background:linear-gradient(transparent 55%,#D6E6FF 55%);
+  background:linear-gradient(transparent 55%,#BCE3FF 55%);
 }
 .mark-purple{
-  background:linear-gradient(transparent 55%,#E8D9FF 55%);
+  background:linear-gradient(transparent 55%,#E2CFFF 55%);
 }
 .mark-yellow{
-  background:linear-gradient(transparent 55%,#FFE59C 55%);
+  background:linear-gradient(transparent 55%,#FFE48B 55%);
 }
-.suitability-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+.benefits-list,.problems-list{display:grid;gap:16px}
+.line-card{
+  display:flex;align-items:center;gap:25px;
+  padding:25px 30px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 10px 32px #168cf00a;
 }
-.card{
-  padding:32px;border:1px solid var(--line);
-  border-radius:27px;background:white;
-  transition:transform .3s,box-shadow .3s;
+.line-number{
+  flex:0 0 55px;
+  font-size:30px;
+  font-weight:900;color:var(--blue);
+  letter-spacing:-.05em;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px #174c9c14}
-.card h3{font-size:24px;line-height:1.25;margin:0 0 18px;letter-spacing:-.03em}
-.card p,.card li{color:var(--muted)}
-.problem{padding:15px 0;border-bottom:1px solid var(--line)}
-.problem:last-child{border-bottom:0}
-.fit-box{
-  margin-top:22px;padding:20px;
-  border-radius:18px;background:#EDF4FF;
+.line-card p{
+  margin:0;
+  font-size:clamp(19px,2.3vw,27px);
+  line-height:1.45;font-weight:650;
+  letter-spacing:-.025em;
 }
-.fit-box h3{font-size:20px;color:var(--blue)}
-.fit-box.purple{background:#F1EBFF}
-.fit-box.purple h3{color:#6E4AB8}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.step-number{font-size:46px;font-weight:850;color:var(--blue);letter-spacing:-.06em}
-.step h3{font-size:20px;margin:6px 0}
-.step p{color:var(--muted)}
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.suitability-result{
+  margin-top:28px;
+  padding:30px;
+  border-radius:25px;
+  background:linear-gradient(120deg,#DDF2FF,#EAE0FF);
+  font-size:clamp(21px,2.6vw,30px);
+  font-weight:750;
+  line-height:1.45;
+}
+.small-warning{
+  margin-top:22px;
+  padding:22px 26px;
+  border-radius:18px;
+  background:#FFF8E4;
+  border:1px solid #FFE5A1;
+  color:#5B5060;
+  font-size:16px;
+}
+.panel-section{
+  background:linear-gradient(180deg,#F3FAFF,#FFFFFF);
+}
+.panel-intro{
+  font-size:clamp(19px,2.8vw,28px);
+  font-weight:650;
+  color:var(--muted);
+  margin:0;
+}
+.panel-title{
+  font-size:clamp(40px,6vw,76px);
+  font-weight:900;
+  line-height:1.13;
+  letter-spacing:-.06em;
+  margin:10px 0 45px;
+}
+.panel-title span{display:block}
+.panel-card{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:30px;
+  padding:28px;
+  margin:28px 0;
+  box-shadow:0 16px 45px #168cf012;
+}
+.panel-card h3{
+  font-size:clamp(22px,3vw,34px);
+  line-height:1.3;
+  letter-spacing:-.035em;
+}
+.panel-placeholder{
+  min-height:290px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  gap:14px;
+  border:2px dashed #9ECFF8;
+  border-radius:22px;
+  background:linear-gradient(125deg,#E2F4FF,#E8E3FF,#FFF3CF);
+  color:#2873B4;
+  font-weight:700;
+  padding:28px;
+}
+.panel-placeholder svg{width:52px;height:52px;opacity:.7}
+.skills{
+  margin-top:55px;
+  padding:36px;
+  border-radius:30px;
+  background:linear-gradient(120deg,#E3F4FF,#EDE4FF);
+}
+.skills h3{
+  margin:0 0 20px;
+  font-size:clamp(28px,4vw,45px);
+  letter-spacing:-.045em;
+  line-height:1.2;
+}
+.skills p{
+  font-size:clamp(19px,2.5vw,27px);
+  line-height:1.6;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+.step{
+  padding:32px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:0 12px 34px #168cf00d;
+}
+.step:nth-child(2){background:#F4EEFF}
+.step:nth-child(3){background:#FFF9E7}
+.step:nth-child(4){background:#EAF7FF}
+.step-number{
+  display:block;
+  font-size:70px;
+  line-height:1;
+  letter-spacing:-.07em;
+  color:var(--blue);
+  font-weight:900;
+}
+.step:nth-child(2) .step-number{color:var(--purple)}
+.step:nth-child(3) .step-number{color:#D49A10}
+.step h3{
+  font-size:25px;
+  margin:22px 0 10px;
+  letter-spacing:-.035em;
+}
+.step p{color:#405571;font-size:17px}
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 .price-card{
-  display:flex;flex-direction:column;
-  padding:30px;border:1px solid var(--line);
-  border-radius:28px;background:white;
+  display:flex;
+  flex-direction:column;
+  padding:30px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:30px;
+  box-shadow:0 12px 36px #168cf00c;
 }
-.price-card.featured{border:2px solid var(--blue);box-shadow:0 20px 50px #174c9c18}
+.price-card.featured{
+  border:2px solid var(--blue);
+  box-shadow:0 22px 50px #168cf025;
+}
 .tag{
-  display:inline-block;width:fit-content;
-  border-radius:30px;padding:6px 12px;
-  background:#EAF2FF;color:var(--blue);
-  font-size:12px;font-weight:800;
+  display:inline-block;
+  width:fit-content;
+  padding:7px 13px;
+  border-radius:100px;
+  background:#E1F3FF;
+  color:var(--deep);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.04em;
 }
-.price-card h3{font-size:25px;line-height:1.2;margin:22px 0 10px;letter-spacing:-.035em}
-.price{font-size:42px;font-weight:850;color:var(--blue);letter-spacing:-.06em;margin:14px 0}
-.price-card p,.price-card li{color:var(--muted);font-size:15px}
-.price-card ul{padding-left:20px;margin:14px 0 25px}
-.price-card li{margin:9px 0}
-.price-card .button{margin-top:auto}
-.schedule{
-  margin:14px 0 22px;padding:16px;
-  background:#F3F7FF;border-radius:16px;
-  color:#344563;font-size:14px;
+.price-card h3{
+  font-size:27px;
+  line-height:1.2;
+  margin:22px 0 8px;
+  letter-spacing:-.04em;
 }
-.schedule strong{color:var(--ink)}
-.note{margin-top:26px;color:var(--muted);font-size:14px}
-.cta-section{background:var(--blue);color:white;text-align:center}
+.price{
+  font-size:43px;
+  color:var(--deep);
+  font-weight:900;
+  letter-spacing:-.06em;
+  margin:16px 0;
+}
+.price-card p{
+  color:#506078;
+  font-size:15px;
+}
+.price-details{
+  padding:17px;
+  margin:18px 0;
+  border-radius:17px;
+  background:#F0F8FF;
+}
+.price-card .button{
+  margin-top:auto;
+}
+.hook{
+  background:linear-gradient(125deg,#D9F1FF,#E4DFFF,#FFF1BE);
+  text-align:center;
+}
+.hook h2{
+  max-width:1000px;
+  margin:auto;
+  font-size:clamp(34px,5vw,67px);
+  line-height:1.2;
+  letter-spacing:-.055em;
+}
+.cta-section{
+  background:linear-gradient(125deg,#168CF0,#58B9FF);
+  color:white;
+  text-align:center;
+}
 .cta-section h2{
-  max-width:850px;margin:0 auto 22px;
+  max-width:850px;
+  margin:0 auto 22px;
   font-size:clamp(35px,5vw,62px);
-  line-height:1.12;letter-spacing:-.05em;
+  line-height:1.13;
+  letter-spacing:-.055em;
 }
-.cta-section p{max-width:650px;margin:0 auto 30px;color:#DFEBFF;font-size:18px}
-footer{padding:45px 0;background:#101B32;color:white}
-.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer p,footer a{color:#C6D2E5}
+.cta-section p{
+  max-width:750px;
+  margin:0 auto 28px;
+  font-size:19px;
+}
+.cta-buttons{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:14px;
+}
+footer{
+  background:#102B4D;
+  color:white;
+  padding:45px 0;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:24px;
+}
+footer p,footer a{color:#D6E8F8}
 .floating-whatsapp{
-  position:fixed;right:20px;bottom:20px;z-index:40;
-  display:flex;align-items:center;gap:10px;
-  padding:13px 18px;border-radius:100px;
-  background:#168C54;color:white;
-  font-weight:800;font-size:14px;
-  box-shadow:0 12px 30px #0003;
+  position:fixed;right:18px;bottom:18px;
+  z-index:60;
+  display:flex;align-items:center;gap:9px;
+  padding:13px 18px;
+  background:#25D366;color:#073F22;
+  border-radius:100px;
+  font-weight:850;
+  box-shadow:0 12px 30px #0002;
 }
 .reveal{
-  opacity:0;transform:translateY(35px);
-  transition:opacity .75s ease,transform .75s ease;
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease;
 }
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
 .hero h1 span:nth-child(2){transition-delay:.12s}
 .hero h1 span:nth-child(3){transition-delay:.24s}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:38px}
-  .teacher-profile{width:min(100%,450px);margin:auto}
+  .teacher-profile{max-width:490px;width:100%;margin:auto}
   .pricing{grid-template-columns:1fr}
-  .steps{grid-template-columns:repeat(2,1fr)}
   .nav-links a:not(.button){display:none}
 }
-@media(max-width:600px){
+@media(max-width:650px){
   .container{width:calc(100% - 32px)}
-  .hero{padding:70px 0}
+  .hero{padding:65px 0}
   .hero h1{font-size:clamp(40px,10.5vw,58px)}
-  .hero h1 .last{margin-left:-5px;padding-left:5px}
-  .hero-description{font-size:17px}
-  .teacher-photo{height:340px}
+  .hero h1 .blue-text{margin-left:-5px;padding-left:5px}
+  .hero-description{font-size:18px}
+  .brand-logo{width:50px;height:50px}
+  .brand-text{font-size:16px}
+  .nav .button{padding:10px 13px;font-size:12px}
   section{padding:70px 0}
-  .benefit{gap:14px;padding:22px 18px}
-  .benefit-number{flex-basis:35px;font-size:23px}
-  .benefit p{font-size:19px}
-  .suitability-grid,.steps{grid-template-columns:1fr}
-  .card,.price-card{padding:25px}
-  .nav .button{padding:10px 14px;font-size:12px}
-  .brand{font-size:16px}
+  .line-card{padding:20px 17px;gap:14px}
+  .line-number{flex-basis:35px;font-size:24px}
+  .line-card p{font-size:19px}
+  .steps{grid-template-columns:1fr}
+  .step,.price-card{padding:25px}
+  .step-number{font-size:62px}
+  .panel-card,.skills{padding:22px}
   .floating-whatsapp{right:12px;bottom:12px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
   .reveal{opacity:1;transform:none}
 }
 </style>
@@ -263,22 +435,23 @@ footer p,footer a{color:#C6D2E5}
 
 <body>
 
-<!-- WhatsApp simgesi -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="wa-icon" viewBox="0 0 32 32">
-    <path d="M16 .8A15.1 15.1 0 0 0 3.1 23.7L1 31l7.5-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.2 12.2 0 0 1-6.2-1.7l-.5-.3-4.4 1.2 1.2-4.3-.3-.5A12.3 12.3 0 1 1 16 28.4Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1 1.3 1.8 1.4 3.6 3.4 5.1c2 1.5 4.1 2.2 5.5 2.6 1.4.4 2.7.3 3.7-.2 1-.5 2.2-1.8 2.5-2.5.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4Z"/>
+<!-- WHATSAPP LOGOSU -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="whatsapp-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.35.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.24-1.64a11.95 11.95 0 0 0 5.8 1.48h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.48-8.41ZM12.05 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.9 9.9 0 0 1-1.52-5.23c0-5.46 4.44-9.9 9.9-9.9a9.84 9.84 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.23-.64.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.49.71.3 1.27.48 1.7.61.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
   </symbol>
 </svg>
 
 <header>
   <div class="container nav">
     <a class="brand" href="#anasayfa">
-      <span class="brand-icon">☀️</span>
-      <span>Yazılı Hazırlık</span>
+      <img class="brand-logo" src="logo.jpg" alt="Yazılı Hazırlık logosu" onerror="this.style.display='none'">
+      <span class="brand-text">Yazılı Hazırlık</span>
     </a>
+
     <nav class="nav-links" aria-label="Ana menü">
       <a href="#faydalar">Kazanımlar</a>
-      <a href="#surec">Eğitim Süreci</a>
+      <a href="#surec">Nasıl İlerliyoruz?</a>
       <a href="#programlar">Programlar</a>
       <a class="button" href="#programlar">Programları İncele</a>
     </nav>
@@ -287,43 +460,40 @@ footer p,footer a{color:#C6D2E5}
 
 <main>
 
-<!-- İLK EKRAN -->
+<!-- ANA EKRAN -->
 <section class="hero" id="anasayfa">
   <div class="container hero-grid">
 
     <div>
-      <div class="eyebrow reveal">Anlayarak Hızlı Okuma Eğitimi</div>
+      <span class="eyebrow reveal">Anlayarak Hızlı Okuma Eğitimi</span>
 
       <h1>
         <span class="reveal">Hızlı okusun.</span>
         <span class="reveal">Doğru anlasın.</span>
-        <span class="last reveal">Netleri artsın.</span>
+        <span class="blue-text reveal">Netleri artsın.</span>
       </h1>
 
       <p class="hero-description reveal">
-        5, 6, 7 ve 8. sınıf öğrencileri için sınav başarısını
-        artırmayı hedefleyen okuma sistemi.
+        5, 6, 7 ve 8. sınıf öğrencileri için
+        sınav başarısını artıran okuma sistemi.
       </p>
-
-      <div class="reveal">
-        <a class="button whatsapp-button"
-           href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-           target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true"><use href="#wa-icon"/></svg>
-          WhatsApp'tan Bilgi Al
-        </a>
-      </div>
     </div>
 
     <div class="teacher-profile reveal">
-      <img class="teacher-photo"
-           src="IMG_1287.jpg"
+      <img class="teacher-photo" src="IMG_1287.jpg"
            alt="Halime Kurt - Anlayarak Hızlı Okuma Eğitmeni">
 
       <h2>Halime Kurt</h2>
       <p>Anlayarak Hızlı Okuma Eğitmeni</p>
       <p>Eğitim Danışmanı</p>
       <p>Matematik Öğretmeni</p>
+
+      <a class="button green"
+         href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+         target="_blank" rel="noopener noreferrer">
+        <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
+        WhatsApp'tan Bilgi Al
+      </a>
     </div>
 
   </div>
@@ -334,34 +504,34 @@ footer p,footer a{color:#C6D2E5}
   <div class="container">
 
     <div class="section-head reveal">
-      <div class="eyebrow">Hedeflediğimiz Kazanımlar</div>
       <h2>Öğrenci Bu Eğitimle Neler Kazanacak?</h2>
+      <p>Hedeflediğimiz kazanımlar;</p>
     </div>
 
     <div class="benefits-list">
 
-      <div class="benefit reveal">
-        <span class="benefit-number">01</span>
+      <div class="line-card reveal">
+        <span class="line-number">01</span>
         <p>Okuduğunu <span class="mark-blue">daha iyi ve daha hızlı</span> anlamak.</p>
       </div>
 
-      <div class="benefit reveal">
-        <span class="benefit-number">02</span>
+      <div class="line-card reveal">
+        <span class="line-number">02</span>
         <p>Denemelerdeki <span class="mark-purple">net performansını yükseltmek.</span></p>
       </div>
 
-      <div class="benefit reveal">
-        <span class="benefit-number">03</span>
+      <div class="line-card reveal">
+        <span class="line-number">03</span>
         <p><span class="mark-yellow">Dikkat ve odaklanma</span> becerisini geliştirmek.</p>
       </div>
 
-      <div class="benefit reveal">
-        <span class="benefit-number">04</span>
+      <div class="line-card reveal">
+        <span class="line-number">04</span>
         <p>Paragraf çözme tekniklerini öğrenerek <span class="mark-blue">paragraf netlerini artırmak.</span></p>
       </div>
 
-      <div class="benefit reveal">
-        <span class="benefit-number">05</span>
+      <div class="line-card reveal">
+        <span class="line-number">05</span>
         <p>Okuma hızını artırmak ve sınavlarda yaşadığı <span class="mark-purple">süre problemini çözmek.</span></p>
       </div>
 
@@ -369,226 +539,275 @@ footer p,footer a{color:#C6D2E5}
   </div>
 </section>
 
-<!-- ÇOCUĞUNUZ İÇİN UYGUN MU? -->
+<!-- UYGUNLUK -->
 <section id="uygun-mu">
   <div class="container">
 
     <div class="section-head reveal">
-      <div class="eyebrow">Çocuğunuz İçin Doğru Eğitim mi?</div>
       <h2>Anlayarak Hızlı Okuma Eğitimi Çocuğunuz İçin Uygun mu?</h2>
     </div>
 
-    <div class="suitability-grid">
+    <div class="problems-list">
 
-      <div class="card reveal">
-        <h3>Şu durumlar size tanıdık geliyor mu?</h3>
-
-        <p class="problem">Çocuğunuz deneme sınavlarında süre yetiştirmekte zorlanıyorsa,</p>
-
-        <p class="problem">Yanlış yaptığı sorulara tekrar baktığında “Bunu biliyordum, çözebilirdim aslında ama sınavda yapamadım.” diyorsa,</p>
-
-        <p class="problem">Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve anlamak için birkaç kez okuyorsa,</p>
-
-        <p class="problem">Dikkat ve odaklanma problemi yaşıyorsa...</p>
+      <div class="line-card reveal">
+        <span class="line-number">01</span>
+        <p>Çocuğunuz deneme sınavlarında <span class="mark-blue">süre yetiştirmekte zorlanıyorsa,</span></p>
       </div>
 
-      <div class="card reveal" style="border:2px solid #174C9C">
-        <h3>Bu eğitim nasıl yardımcı olabilir?</h3>
+      <div class="line-card reveal">
+        <span class="line-number">02</span>
+        <p>Yanlış yaptığı sorulara tekrar baktığında <span class="mark-yellow">“Bunu biliyordum, çözebilirdim aslında ama sınavda yapamadım.”</span> diyorsa,</p>
+      </div>
 
-        <p>
-          Anlayarak Hızlı Okuma Eğitimi, yaşadığı bu sorunların
-          aşılmasına yardımcı olmayı hedefler.
-        </p>
+      <div class="line-card reveal">
+        <span class="line-number">03</span>
+        <p>Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve <span class="mark-purple">anlamak için birkaç kez okuyorsa,</span></p>
+      </div>
 
-        <div class="fit-box">
-          <h3>Kimler İçin Uygun?</h3>
-          <p>
-            Bu eğitim, yeni teknikler öğrenmeye ve düzenli egzersiz
-            yapmaya istekli öğrenciler için uygundur.
-          </p>
-        </div>
-
-        <div class="fit-box purple">
-          <h3>Kimler İçin Uygun Değil?</h3>
-          <p>
-            Hiç egzersiz yapmak istemeyen veya tek derste kesin sonuç
-            bekleyen öğrenciler için uygun değildir.
-          </p>
-        </div>
+      <div class="line-card reveal">
+        <span class="line-number">04</span>
+        <p><span class="mark-blue">Dikkat ve odaklanma problemi</span> yaşıyorsa</p>
       </div>
 
     </div>
+
+    <div class="suitability-result reveal">
+      Anlayarak Hızlı Okuma Eğitimi, yaşadığı bu sorunları çözebilir.
+    </div>
+
+    <div class="small-warning reveal">
+      Bu eğitim, yeni teknikler öğrenmeye ve düzenli egzersiz yapmaya istekli öğrenciler için uygundur. Hiç egzersiz yapmak istemeyen veya tek derste kesin sonuç bekleyen öğrenciler için uygun değildir.
+    </div>
+
   </div>
 </section>
 
-<!-- EĞİTİM SÜRECİ -->
+<!-- EGZERSİZ PANELLERİ -->
+<section class="panel-section" id="paneller">
+  <div class="container">
+
+    <div class="reveal">
+      <p class="panel-intro">Öğrencinin gelişimini destekleyen</p>
+      <h2 class="panel-title">
+        <span><span class="mark-blue">Yenilikçi</span> ve</span>
+        <span><span class="mark-purple">kişiye özel</span> egzersiz paneli</span>
+      </h2>
+    </div>
+
+    <div class="panel-card reveal">
+      <div class="panel-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="15" rx="2"/>
+          <path d="M7 15l4-4 3 3 3-5"/>
+          <path d="M9 22h6M12 19v3"/>
+        </svg>
+        <span>Kendi oluşturduğunuz eğitim panelinin görseli buraya eklenecek.</span>
+      </div>
+    </div>
+
+    <div class="panel-card reveal">
+      <h3>
+        <span class="mark-blue">10.000+ e-kitap,</span>
+        bağlam temelli soru çalışmaları,
+        <span class="mark-purple">zihin haritaları,</span>
+        dikkat ve odaklanma egzersizleri
+      </h3>
+
+      <div class="panel-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="15" rx="2"/>
+          <path d="M7 15l4-4 3 3 3-5"/>
+          <path d="M9 22h6M12 19v3"/>
+        </svg>
+        <span>SuperRead eğitim panelinin görseli buraya eklenecek.</span>
+      </div>
+    </div>
+
+    <div class="skills reveal">
+      <h3>Hızlı ve doğru okumak için gerekli olan <span class="mark-yellow">3 temel beceri</span></h3>
+
+      <p>
+        <span class="mark-blue">Göz kaslarını esnetme,</span>
+        <span class="mark-purple">kelime haznesini artırma</span>
+        ve <span class="mark-yellow">soru hakimiyeti kazanma</span>
+      </p>
+
+      <p>
+        üzerine yaptığımız çalışmalarla
+        <span class="mark-blue">geleceğin öğrenme modelini</span>
+        çocuğunuz için verimli hale getiriyoruz.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- NASIL İLERLİYORUZ -->
 <section class="soft" id="surec">
   <div class="container">
 
     <div class="section-head reveal">
-      <div class="eyebrow">Nasıl İlerliyoruz?</div>
+      <span class="eyebrow">Nasıl İlerliyoruz?</span>
       <h2>Adım adım, planlı bir eğitim süreci.</h2>
-      <p>Öğrencinin gelişimini destekleyen uygulamalı bir yol izliyoruz.</p>
     </div>
 
     <div class="steps">
+
       <div class="step reveal">
         <span class="step-number">01</span>
-        <h3>Başlangıç Değerlendirmesi</h3>
-        <p>Öğrencinin okuma hızı ve anlama düzeyine bakarız.</p>
+        <h3>Ölçüm Testi</h3>
+        <p>Başlangıç okuma hızını ve anlama oranını belirliyorum ve son dersimizde de bu ölçümü yapıyorum.</p>
       </div>
 
       <div class="step reveal">
         <span class="step-number">02</span>
-        <h3>Teknikleri Öğrenme</h3>
-        <p>Okuma, dikkat ve anlama çalışmalarına başlarız.</p>
+        <h3>Egzersizler</h3>
+        <p>Birlikte göz egzersizleri ve odaklanma çalışmaları yapıyoruz. Öğrencinin okuma tekniklerini deneyimlemesini ve anlama becerisini geliştirmesini sağlıyorum.</p>
       </div>
 
       <div class="step reveal">
         <span class="step-number">03</span>
-        <h3>Uygulama ve Pekiştirme</h3>
-        <p>Etkinlikler, alıştırmalar ve programın kapsamına göre ödevlerle ilerleriz.</p>
+        <h3>Paragraf - Maarif Model Soru Çalışmaları</h3>
+        <p>Denemelerde net artışı sağlamaları için paragraf ve tüm dersler adına soru çözüm tekniklerini öğretiyorum.</p>
       </div>
 
       <div class="step reveal">
         <span class="step-number">04</span>
-        <h3>Gelişimi Takip Etme</h3>
-        <p>Çalışmaları değerlendirir, sonraki gelişim alanlarını belirleriz.</p>
+        <h3>Ödevlendirme</h3>
+        <p>Derslerimizin ardından Superead eğitim paneli üzerinden 21 günlük ödevlendirme yapıp takibini yapıyorum.</p>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
-<!-- PROGRAMLAR -->
+<!-- EĞİTİM PROGRAMLARI -->
 <section id="programlar">
   <div class="container">
 
     <div class="section-head reveal">
-      <div class="eyebrow">Eğitim Seçenekleri</div>
-      <h2>Çocuğunuz için uygun programı keşfedin.</h2>
-      <p>Kısa bir başlangıç atölyesi, kapsamlı grup eğitimi veya kişiye özel birebir eğitim.</p>
+      <span class="eyebrow">Size Uygun Bir Başlangıç</span>
+      <h2>Eğitim Programlarımız</h2>
+      <p>Çocuğunuzun ihtiyacına ve öğrenme ritmine uygun programı keşfedin. Tüm eğitimler online olarak gerçekleştirilir.</p>
     </div>
 
     <div class="pricing">
 
       <article class="price-card reveal">
-        <span class="tag">Başlangıç Programı</span>
+        <span class="tag">İLK ADIM</span>
         <h3>Hızlı Okuma Atölyesi</h3>
-        <p>Hızlı okuma teknikleriyle tanışmak isteyen öğrenciler için.</p>
         <div class="price">1.500 TL</div>
-        <p><strong>4 ders saati</strong> · 2 buluşma (90'ar dakika)</p>
-        <p><strong>Kontenjan:</strong> Grup başına en fazla 20 öğrenci</p>
 
-        <div class="schedule">
-          <strong>5–6. sınıflar</strong><br>
-          16 ve 19 Kasım 2026 · 20.00–21.30<br><br>
-          <strong>7–8. sınıflar</strong><br>
-          17 ve 20 Kasım 2026 · 20.00–21.30<br><br>
-          <strong>Başvuru:</strong> 9–15 Kasım 2026
+        <p><strong>4 ders saati · 2 buluşma · Online Atölye Grubu</strong></p>
+
+        <div class="price-details">
+          <p><strong>5–6. sınıflar:</strong> 16 ve 19 Kasım 2026, 20.00–21.30.</p>
+          <p><strong>7–8. sınıflar:</strong> 17 ve 20 Kasım 2026, 20.00–21.30.</p>
+          <p><strong>Kayıt:</strong> 9–15 Kasım 2026 veya kontenjan dolana kadar.</p>
         </div>
 
-        <ul>
-          <li>Başlangıç okuma değerlendirmesi</li>
-          <li>Temel hızlı okuma teknikleri</li>
-          <li>1 haftalık interaktif modül erişimi</li>
-          <li>PDF çalışma materyalleri</li>
-          <li>WhatsApp üzerinden takip</li>
-        </ul>
+        <p>Başlangıç ve sonuç okuma değerlendirmeleri, tanıtıcı teknikler, bir haftalık interaktif egzersiz erişimi, PDF, WhatsApp ödev takibi ve veli geri bildirimi.</p>
+
+        <p>Atölyemizde ilk gelişim adımlarını kazanmayı, ana eğitimde ise bu becerilerin daha kapsamlı geliştirilmesini sağlıyoruz.</p>
+
+        <p><strong>SuperRead üyeliği dahil değildir.</strong></p>
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
            target="_blank" rel="noopener noreferrer">
-          Ön Kayıt Formunu Aç ↗
+          Kayıt Ol
         </a>
       </article>
 
       <article class="price-card featured reveal">
-        <span class="tag">Kapsamlı Grup Eğitimi</span>
+        <span class="tag">KAPSAMLI GRUP PROGRAMI</span>
         <h3>Aralık Hızlı Okuma Grubu</h3>
-        <p>Düzenli uygulama ve takip içeren grup eğitimi.</p>
         <div class="price">6.000 TL</div>
-        <p><strong>18 ders saati</strong></p>
-        <p><strong>Kontenjan:</strong> Grup başına en fazla 10 öğrenci</p>
 
-        <div class="schedule">
-          <strong>7–8. sınıflar</strong><br>
-          30 Kasım–18 Aralık 2026<br>
-          Pazartesi / Çarşamba / Cuma · 20.00–21.30<br><br>
-          <strong>5–6. sınıflar</strong><br>
-          1–19 Aralık 2026<br>
-          Salı / Perşembe · 20.00–21.30<br>
-          Cumartesi · 11.00–12.30<br><br>
-          <strong>Başvuru:</strong> 23–29 Kasım 2026
+        <p><strong>18 ders saati · En fazla 20 öğrenci</strong></p>
+
+        <div class="price-details">
+          <p><strong>7–8. sınıflar:</strong> 30 Kasım–18 Aralık 2026. Pazartesi, Çarşamba ve Cuma 20.00–21.30.</p>
+
+          <p><strong>5–6. sınıflar:</strong> 1–19 Aralık 2026. Salı ve Perşembe 20.00–21.30, Cumartesi 11.00–12.30.</p>
         </div>
 
-        <ul>
-          <li>1 yıllık SuperRead erişimi</li>
-          <li>Tam interaktif çalışma modülü</li>
-          <li>PDF materyaller ve ödev takibi</li>
-          <li>Veli bilgilendirmeleri</li>
-          <li>Atölye katılımcıları için 1.500 TL mahsup imkânı</li>
-          <li>Atölyeden geçişte kalan 4.500 TL için 2 × 2.250 TL ödeme</li>
-        </ul>
+        <p>1 yıllık SuperRead üyeliği, interaktif egzersiz modülü, paragraf teknikleri ve uygulama, PDF rehber, değerlendirmeler, WhatsApp ödev takibi ve veli bilgilendirmeleri.</p>
+
+        <p>Öncesinde atölyeye katılmışsanız ödediğiniz 1.500 TL, 6.000 TL üzerinden düşülür, kalan 4.500 TL üzerinden hesaplanır.</p>
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
            target="_blank" rel="noopener noreferrer">
-          Ön Kayıt Formunu Aç ↗
+          Kayıt Ol
         </a>
       </article>
 
       <article class="price-card reveal">
-        <span class="tag">Kişiye Özel Eğitim</span>
+        <span class="tag">ÇOCUĞUNUZA ÖZEL</span>
         <h3>Birebir Hızlı Okuma Eğitimi</h3>
-        <p>Öğrencinin ihtiyacına göre planlanan özel çalışma süreci.</p>
-        <div class="price">18.000 TL</div>
-        <p><strong>18 ders saati</strong></p>
-        <p>12 saat birebir eğitim + 6 saat grup paragraf çalışması</p>
+        <div class="price">18.500 TL</div>
 
-        <div class="schedule">
-          <strong>Ders takvimi:</strong><br>
-          Öğrenci ve eğitmenin uygunluğuna göre planlanır.
+        <p><strong>18 ders saati · Birebir Online Özel Ders</strong></p>
+
+        <div class="price-details">
+          <p>18 ders saati ile birebir hızlı okuma</p>
+          <p>Birebir dersler için size uygun kişiselleştirilmiş takvim.</p>
         </div>
 
-        <ul>
-          <li>Kişiselleştirilmiş eğitim planı</li>
-          <li>Birebir okuma ve anlama çalışmaları</li>
-          <li>Grup paragraf uygulamaları</li>
-          <li>SuperRead erişimi</li>
-          <li>Çalışma materyalleri ve gelişim takibi</li>
-        </ul>
+        <p>1 yıllık SuperRead üyeliği, interaktif modül, okuma değerlendirmeleri, PDF ve bireysel veli bilgilendirmeleri.</p>
+
+        <p>Çocuğunuzun öğrenme ritmine göre planlanan birebir dersler.</p>
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
            target="_blank" rel="noopener noreferrer">
-          Ön Kayıt Formunu Aç ↗
+          Kayıt Ol
         </a>
       </article>
 
     </div>
+  </div>
+</section>
 
-    <p class="note">
-      Programlara katılım, belirtilen kontenjanlar ve takvim doğrultusunda planlanır.
-      Ön kayıt formunu doldurmak, kesin kayıt veya ödeme anlamına gelmez.
-    </p>
-
+<!-- VURGU BAŞLIĞI -->
+<section class="hook">
+  <div class="container reveal">
+    <h2>
+      Hiçbir öğrenci <span class="mark-blue">okuduğunu anlamadan,</span>
+      <span class="mark-purple">soru yorumlama becerisi kazanmadan</span>
+      sonraki sınıfa geçmemeli.
+    </h2>
   </div>
 </section>
 
 <!-- KAPANIŞ -->
 <section class="cta-section">
   <div class="container reveal">
-    <h2>Çocuğunuzun okuma becerileri için ilk adımı atın.</h2>
+
+    <h2>Çocuğunuzun okuma becerilerini geliştirmek için ilk adımı atın.</h2>
+
     <p>
-      Size uygun programı belirlemek ve kayıt süreci hakkında
-      bilgi almak için ön kayıt formunu doldurun.
+      Formu doldurarak ön kayıt talebinizi iletebilirsiniz.
+      Her öğrencimle ilgilenebilmek için sınırlı kontenjanla çalışıyorum.
+      Başvurunuzu ilettikten sonra sizinle en kısa sürede iletişime geçeceğim.
     </p>
-    <a class="button light"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-       target="_blank" rel="noopener noreferrer">
-      Ön Kayıt Formuna Git ↗
-    </a>
+
+    <div class="cta-buttons">
+      <a class="button white"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
+         target="_blank" rel="noopener noreferrer">
+        Kayıt Ol
+      </a>
+
+      <a class="button green"
+         href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+         target="_blank" rel="noopener noreferrer">
+        <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
+        WhatsApp'tan Bilgi Al
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -598,14 +817,15 @@ footer p,footer a{color:#C6D2E5}
   <div class="container footer-inner">
     <div>
       <strong>Yazılı Hazırlık</strong>
-      <p>Halime Kurt · Anlayarak Hızlı Okuma Eğitmeni, Eğitim Danışmanı ve Matematik Öğretmeni</p>
+      <p>Halime Kurt · Anlayarak Hızlı Okuma Eğitmeni · Eğitim Danışmanı · Matematik Öğretmeni</p>
     </div>
+
     <div>
       <a href="https://www.instagram.com/yazili.hazirlik/"
-         target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+         target="_blank" rel="noopener noreferrer">Instagram</a>
       &nbsp; · &nbsp;
       <a href="https://wa.me/905529448155"
-         target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+         target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
   </div>
 </footer>
@@ -614,7 +834,7 @@ footer p,footer a{color:#C6D2E5}
    href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
    target="_blank" rel="noopener noreferrer"
    aria-label="WhatsApp üzerinden bilgi alın">
-  <svg aria-hidden="true"><use href="#wa-icon"/></svg>
+  <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
   WhatsApp
 </a>
 
