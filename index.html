@@ -32,41 +32,78 @@ body{
 }
 a{text-decoration:none;color:inherit}
 .container{width:min(1150px,calc(100% - 40px));margin:auto}
+
 header{
-  position:sticky;top:0;z-index:50;
+  position:sticky;
+  top:0;
+  z-index:50;
   background:rgba(255,255,255,.94);
   backdrop-filter:blur(18px);
   border-bottom:1px solid #DCEAF8;
 }
 .nav{
-  min-height:84px;display:flex;
-  justify-content:space-between;align-items:center;gap:20px;
+  min-height:84px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
-.brand{display:flex;align-items:center;gap:12px;color:var(--deep);font-weight:850}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--deep);
+  font-weight:850;
+}
 .brand-logo{
-  width:62px;height:62px;border-radius:50%;
-  object-fit:cover;background:#DDEFFF;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#DDEFFF;
 }
 .brand-text{font-size:20px}
-.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  font-size:14px;
+  font-weight:700;
+}
 .button{
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:11px;padding:15px 25px;
-  border:0;border-radius:100px;
-  color:white;font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  padding:15px 25px;
+  border:0;
+  border-radius:100px;
+  color:white;
+  font-weight:800;
   background:linear-gradient(120deg,#168CF0,#51B7FF);
   box-shadow:0 10px 25px #168cf033;
   transition:transform .25s,box-shadow .25s;
   cursor:pointer;
 }
-.button:hover{transform:translateY(-4px);box-shadow:0 15px 32px #168cf04d}
+.button:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 32px #168cf04d;
+}
 .button.green{
   background:#25D366;
   box-shadow:0 10px 24px #25d36635;
   color:#073F22;
 }
-.button.white{background:#fff;color:var(--deep)}
-.wa-icon{width:24px;height:24px;flex-shrink:0}
+.button.white{
+  background:#fff;
+  color:var(--deep);
+}
+.wa-icon{
+  width:24px;
+  height:24px;
+  flex-shrink:0;
+}
+
 .hero{
   padding:95px 0;
   overflow:hidden;
@@ -76,81 +113,154 @@ header{
     linear-gradient(150deg,#E9F7FF,#F7FBFF 65%,#FFF9E8);
 }
 .hero-grid{
-  display:grid;grid-template-columns:1.15fr .85fr;
-  align-items:center;gap:65px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:65px;
 }
 .eyebrow{
-  display:block;color:var(--deep);
-  font-size:14px;font-weight:850;
-  letter-spacing:.08em;text-transform:uppercase;
+  display:block;
+  color:var(--deep);
+  font-size:14px;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 .hero h1{
   margin:24px 0;
   font-size:clamp(48px,6.2vw,87px);
-  line-height:1.12;letter-spacing:-.065em;
+  line-height:1.12;
+  letter-spacing:-.065em;
   font-weight:900;
 }
 .hero h1 span{display:block}
 .hero h1 .blue-text{
-  width:fit-content;max-width:100%;
+  width:fit-content;
+  max-width:100%;
   color:var(--deep);
   background:linear-gradient(95deg,#BCE3FF,#D7E9FF,#E5D8FF);
-  border-radius:15px;padding:2px 12px 10px;
+  border-radius:15px;
+  padding:2px 12px 10px;
   margin-left:-12px;
 }
 .hero-description{
   max-width:560px;
   color:#405671;
-  font-size:20px;font-weight:550;
+  font-size:20px;
+  font-weight:550;
 }
+
+/* FOTOĞRAF KARTI: KAHVERENGİDEN ALTIN SARISINA */
 .teacher-profile{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
   padding:18px 18px 30px;
   text-align:center;
-  border:1px solid #D5E9FB;
+  border:1px solid #D8B479;
   border-radius:34px;
-  background:white;
-  box-shadow:0 25px 65px #168cf025;
+  background:
+    radial-gradient(ellipse at 85% 12%,rgba(255,238,174,.95),transparent 42%),
+    radial-gradient(ellipse at 5% 90%,rgba(122,69,35,.48),transparent 48%),
+    linear-gradient(145deg,#A87343 0%,#D7A35F 34%,#F7D78B 69%,#FFF0BC 100%);
+  box-shadow:0 25px 65px rgba(121,76,37,.24);
+}
+.teacher-profile::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  z-index:-1;
+  background:radial-gradient(circle,rgba(255,250,216,.35),transparent 55%);
+  pointer-events:none;
 }
 .teacher-photo{
   display:block;
   width:100%;
   height:auto;
-  max-height:none;
   object-fit:contain;
   border-radius:24px;
+  box-shadow:0 14px 32px rgba(87,49,24,.20);
 }
 .teacher-profile h2{
-  margin:20px 0 8px;
-  font-size:31px;color:var(--deep);
+  margin:23px 0 8px;
+  font-size:31px;
+  color:#57321F;
   letter-spacing:-.04em;
 }
 .teacher-profile p{
   margin:3px 0;
-  color:var(--muted);
+  color:#513A2C;
   font-size:15px;
+  font-weight:650;
 }
-.teacher-profile .button{margin-top:22px;width:100%}
+.teacher-profile .button{
+  margin-top:22px;
+  width:100%;
+}
+
 section{padding:100px 0}
 .soft{background:#F2F9FF}
-.section-head{max-width:900px;margin-bottom:43px}
+.section-head{
+  max-width:900px;
+  margin-bottom:43px;
+}
 .section-head h2{
   margin:13px 0 10px;
   font-size:clamp(35px,5vw,61px);
-  line-height:1.13;letter-spacing:-.055em;
+  line-height:1.13;
+  letter-spacing:-.055em;
 }
-.section-head p{color:var(--muted);font-size:18px}
+.section-head p{
+  color:var(--muted);
+  font-size:18px;
+}
+
+/*
+  TAM KELİME VURGUSU
+  Eski alttan çizgi efekti kaldırıldı.
+  Renk, kelimenin bütün yüksekliğini kaplıyor.
+  Görünür alana girince soldan sağa boyanıyor.
+*/
+.mark-blue,
+.mark-purple,
+.mark-yellow{
+  display:inline;
+  padding:.04em .13em .10em;
+  border-radius:.16em;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+  background-repeat:no-repeat;
+  background-size:0% 100%;
+  background-position:left center;
+  transition:background-size 1.15s cubic-bezier(.19,1,.22,1);
+}
+
 .mark-blue{
-  background:linear-gradient(transparent 55%,#BCE3FF 55%);
+  background-image:linear-gradient(105deg,#8BD3FF,#B5E6FF);
 }
 .mark-purple{
-  background:linear-gradient(transparent 55%,#E2CFFF 55%);
+  background-image:linear-gradient(105deg,#C5A6FF,#E1D2FF);
 }
 .mark-yellow{
-  background:linear-gradient(transparent 55%,#FFE48B 55%);
+  background-image:linear-gradient(105deg,#FFD45E,#FFE8A1);
 }
-.benefits-list,.problems-list{display:grid;gap:16px}
+
+/* Vurgu yalnızca bulunduğu bölüm görünür olduğunda başlar. */
+.mark-blue.highlighted,
+.mark-purple.highlighted,
+.mark-yellow.highlighted{
+  background-size:100% 100%;
+}
+
+.benefits-list,
+.problems-list{
+  display:grid;
+  gap:16px;
+}
 .line-card{
-  display:flex;align-items:center;gap:25px;
+  display:flex;
+  align-items:center;
+  gap:25px;
   padding:25px 30px;
   background:white;
   border:1px solid var(--line);
@@ -160,13 +270,15 @@ section{padding:100px 0}
 .line-number{
   flex:0 0 55px;
   font-size:30px;
-  font-weight:900;color:var(--blue);
+  font-weight:900;
+  color:var(--blue);
   letter-spacing:-.05em;
 }
 .line-card p{
   margin:0;
   font-size:clamp(19px,2.3vw,27px);
-  line-height:1.45;font-weight:650;
+  line-height:1.55;
+  font-weight:650;
   letter-spacing:-.025em;
 }
 .suitability-result{
@@ -199,11 +311,11 @@ section{padding:100px 0}
 .panel-title{
   font-size:clamp(40px,6vw,76px);
   font-weight:900;
-  line-height:1.13;
+  line-height:1.2;
   letter-spacing:-.06em;
   margin:10px 0 45px;
 }
-.panel-title span{display:block}
+.panel-title>span{display:block}
 .panel-card{
   border:1px solid var(--line);
   background:white;
@@ -214,7 +326,7 @@ section{padding:100px 0}
 }
 .panel-card h3{
   font-size:clamp(22px,3vw,34px);
-  line-height:1.3;
+  line-height:1.5;
   letter-spacing:-.035em;
 }
 .panel-placeholder{
@@ -232,7 +344,11 @@ section{padding:100px 0}
   font-weight:700;
   padding:28px;
 }
-.panel-placeholder svg{width:52px;height:52px;opacity:.7}
+.panel-placeholder svg{
+  width:52px;
+  height:52px;
+  opacity:.7;
+}
 .skills{
   margin-top:55px;
   padding:36px;
@@ -243,11 +359,11 @@ section{padding:100px 0}
   margin:0 0 20px;
   font-size:clamp(28px,4vw,45px);
   letter-spacing:-.045em;
-  line-height:1.2;
+  line-height:1.3;
 }
 .skills p{
   font-size:clamp(19px,2.5vw,27px);
-  line-height:1.6;
+  line-height:1.7;
 }
 .steps{
   display:grid;
@@ -279,7 +395,10 @@ section{padding:100px 0}
   margin:22px 0 10px;
   letter-spacing:-.035em;
 }
-.step p{color:#405571;font-size:17px}
+.step p{
+  color:#405571;
+  font-size:17px;
+}
 .pricing{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -332,9 +451,7 @@ section{padding:100px 0}
   border-radius:17px;
   background:#F0F8FF;
 }
-.price-card .button{
-  margin-top:auto;
-}
+.price-card .button{margin-top:auto}
 .hook{
   background:linear-gradient(125deg,#D9F1FF,#E4DFFF,#FFF1BE);
   text-align:center;
@@ -343,7 +460,7 @@ section{padding:100px 0}
   max-width:1000px;
   margin:auto;
   font-size:clamp(34px,5vw,67px);
-  line-height:1.2;
+  line-height:1.35;
   letter-spacing:-.055em;
 }
 .cta-section{
@@ -364,8 +481,10 @@ section{padding:100px 0}
   font-size:19px;
 }
 .cta-buttons{
-  display:flex;flex-wrap:wrap;
-  justify-content:center;gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
 }
 footer{
   background:#102B4D;
@@ -373,16 +492,24 @@ footer{
   padding:45px 0;
 }
 .footer-inner{
-  display:flex;justify-content:space-between;
-  flex-wrap:wrap;gap:24px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:24px;
 }
-footer p,footer a{color:#D6E8F8}
+footer p,
+footer a{color:#D6E8F8}
 .floating-whatsapp{
-  position:fixed;right:18px;bottom:18px;
+  position:fixed;
+  right:18px;
+  bottom:18px;
   z-index:60;
-  display:flex;align-items:center;gap:9px;
+  display:flex;
+  align-items:center;
+  gap:9px;
   padding:13px 18px;
-  background:#25D366;color:#073F22;
+  background:#25D366;
+  color:#073F22;
   border-radius:100px;
   font-weight:850;
   box-shadow:0 12px 30px #0002;
@@ -398,9 +525,17 @@ footer p,footer a{color:#D6E8F8}
 }
 .hero h1 span:nth-child(2){transition-delay:.12s}
 .hero h1 span:nth-child(3){transition-delay:.24s}
+
 @media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr;gap:38px}
-  .teacher-profile{max-width:490px;width:100%;margin:auto}
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  .teacher-profile{
+    max-width:490px;
+    width:100%;
+    margin:auto;
+  }
   .pricing{grid-template-columns:1fr}
   .nav-links a:not(.button){display:none}
 }
@@ -408,27 +543,57 @@ footer p,footer a{color:#D6E8F8}
   .container{width:calc(100% - 32px)}
   .hero{padding:65px 0}
   .hero h1{font-size:clamp(40px,10.5vw,58px)}
-  .hero h1 .blue-text{margin-left:-5px;padding-left:5px}
+  .hero h1 .blue-text{
+    margin-left:-5px;
+    padding-left:5px;
+  }
   .hero-description{font-size:18px}
-  .brand-logo{width:50px;height:50px}
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
   .brand-text{font-size:16px}
-  .nav .button{padding:10px 13px;font-size:12px}
+  .nav .button{
+    padding:10px 13px;
+    font-size:12px;
+  }
   section{padding:70px 0}
-  .line-card{padding:20px 17px;gap:14px}
-  .line-number{flex-basis:35px;font-size:24px}
+  .line-card{
+    padding:20px 17px;
+    gap:14px;
+  }
+  .line-number{
+    flex-basis:35px;
+    font-size:24px;
+  }
   .line-card p{font-size:19px}
   .steps{grid-template-columns:1fr}
-  .step,.price-card{padding:25px}
+  .step,
+  .price-card{padding:25px}
   .step-number{font-size:62px}
-  .panel-card,.skills{padding:22px}
-  .floating-whatsapp{right:12px;bottom:12px}
+  .panel-card,
+  .skills{padding:22px}
+  .floating-whatsapp{
+    right:12px;
+    bottom:12px;
+  }
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
+  *,
+  *::before,
+  *::after{
     scroll-behavior:auto!important;
     transition:none!important;
   }
-  .reveal{opacity:1;transform:none}
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
+  .mark-blue,
+  .mark-purple,
+  .mark-yellow{
+    background-size:100% 100%;
+  }
 }
 </style>
 </head>
@@ -436,7 +601,9 @@ footer p,footer a{color:#D6E8F8}
 <body>
 
 <!-- WHATSAPP LOGOSU -->
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg"
+     style="position:absolute;width:0;height:0;overflow:hidden"
+     aria-hidden="true">
   <symbol id="whatsapp-icon" viewBox="0 0 24 24">
     <path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.35.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.24-1.64a11.95 11.95 0 0 0 5.8 1.48h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.48-8.41ZM12.05 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.9 9.9 0 0 1-1.52-5.23c0-5.46 4.44-9.9 9.9-9.9a9.84 9.84 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.23-.64.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.49.71.3 1.27.48 1.7.61.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
   </symbol>
@@ -445,7 +612,10 @@ footer p,footer a{color:#D6E8F8}
 <header>
   <div class="container nav">
     <a class="brand" href="#anasayfa">
-      <img class="brand-logo" src="logo.jpg" alt="Yazılı Hazırlık logosu" onerror="this.style.display='none'">
+      <img class="brand-logo"
+           src="logo.jpg"
+           alt="Yazılı Hazırlık logosu"
+           onerror="this.style.display='none'">
       <span class="brand-text">Yazılı Hazırlık</span>
     </a>
 
@@ -480,7 +650,8 @@ footer p,footer a{color:#D6E8F8}
     </div>
 
     <div class="teacher-profile reveal">
-      <img class="teacher-photo" src="IMG_1287.jpg"
+      <img class="teacher-photo"
+           src="IMG_1287.jpg"
            alt="Halime Kurt - Anlayarak Hızlı Okuma Eğitmeni">
 
       <h2>Halime Kurt</h2>
@@ -490,7 +661,8 @@ footer p,footer a{color:#D6E8F8}
 
       <a class="button green"
          href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
         <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
         WhatsApp'tan Bilgi Al
       </a>
@@ -512,27 +684,43 @@ footer p,footer a{color:#D6E8F8}
 
       <div class="line-card reveal">
         <span class="line-number">01</span>
-        <p>Okuduğunu <span class="mark-blue">daha iyi ve daha hızlı</span> anlamak.</p>
+        <p>
+          Okuduğunu
+          <span class="mark-blue">daha iyi ve daha hızlı</span>
+          anlamak.
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">02</span>
-        <p>Denemelerdeki <span class="mark-purple">net performansını yükseltmek.</span></p>
+        <p>
+          Denemelerdeki
+          <span class="mark-purple">net performansını yükseltmek.</span>
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">03</span>
-        <p><span class="mark-yellow">Dikkat ve odaklanma</span> becerisini geliştirmek.</p>
+        <p>
+          <span class="mark-yellow">Dikkat ve odaklanma</span>
+          becerisini geliştirmek.
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">04</span>
-        <p>Paragraf çözme tekniklerini öğrenerek <span class="mark-blue">paragraf netlerini artırmak.</span></p>
+        <p>
+          Paragraf çözme tekniklerini öğrenerek
+          <span class="mark-blue">paragraf netlerini artırmak.</span>
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">05</span>
-        <p>Okuma hızını artırmak ve sınavlarda yaşadığı <span class="mark-purple">süre problemini çözmek.</span></p>
+        <p>
+          Okuma hızını artırmak ve sınavlarda yaşadığı
+          <span class="mark-purple">süre problemini çözmek.</span>
+        </p>
       </div>
 
     </div>
@@ -551,22 +739,35 @@ footer p,footer a{color:#D6E8F8}
 
       <div class="line-card reveal">
         <span class="line-number">01</span>
-        <p>Çocuğunuz deneme sınavlarında <span class="mark-blue">süre yetiştirmekte zorlanıyorsa,</span></p>
+        <p>
+          Çocuğunuz deneme sınavlarında
+          <span class="mark-blue">süre yetiştirmekte zorlanıyorsa,</span>
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">02</span>
-        <p>Yanlış yaptığı sorulara tekrar baktığında <span class="mark-yellow">“Bunu biliyordum, çözebilirdim aslında ama sınavda yapamadım.”</span> diyorsa,</p>
+        <p>
+          Yanlış yaptığı sorulara tekrar baktığında
+          <span class="mark-yellow">“Bunu biliyordum, çözebilirdim aslında ama sınavda yapamadım.”</span>
+          diyorsa,
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">03</span>
-        <p>Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve <span class="mark-purple">anlamak için birkaç kez okuyorsa,</span></p>
+        <p>
+          Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve
+          <span class="mark-purple">anlamak için birkaç kez okuyorsa,</span>
+        </p>
       </div>
 
       <div class="line-card reveal">
         <span class="line-number">04</span>
-        <p><span class="mark-blue">Dikkat ve odaklanma problemi</span> yaşıyorsa</p>
+        <p>
+          <span class="mark-blue">Dikkat ve odaklanma problemi</span>
+          yaşıyorsa
+        </p>
       </div>
 
     </div>
@@ -596,7 +797,11 @@ footer p,footer a{color:#D6E8F8}
 
     <div class="panel-card reveal">
       <div class="panel-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             aria-hidden="true">
           <rect x="3" y="4" width="18" height="15" rx="2"/>
           <path d="M7 15l4-4 3 3 3-5"/>
           <path d="M9 22h6M12 19v3"/>
@@ -614,7 +819,11 @@ footer p,footer a{color:#D6E8F8}
       </h3>
 
       <div class="panel-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             aria-hidden="true">
           <rect x="3" y="4" width="18" height="15" rx="2"/>
           <path d="M7 15l4-4 3 3 3-5"/>
           <path d="M9 22h6M12 19v3"/>
@@ -624,7 +833,10 @@ footer p,footer a{color:#D6E8F8}
     </div>
 
     <div class="skills reveal">
-      <h3>Hızlı ve doğru okumak için gerekli olan <span class="mark-yellow">3 temel beceri</span></h3>
+      <h3>
+        Hızlı ve doğru okumak için gerekli olan
+        <span class="mark-yellow">3 temel beceri</span>
+      </h3>
 
       <p>
         <span class="mark-blue">Göz kaslarını esnetme,</span>
@@ -698,7 +910,7 @@ footer p,footer a{color:#D6E8F8}
         <h3>Hızlı Okuma Atölyesi</h3>
         <div class="price">1.500 TL</div>
 
-        <p><strong>4 ders saati · 2 buluşma · Online Atölye Grubu</strong></p>
+        <p><strong>4 ders saati · 2 oturum · Online Atölye Grubu</strong></p>
 
         <div class="price-details">
           <p><strong>5–6. sınıflar:</strong> 16 ve 19 Kasım 2026, 20.00–21.30.</p>
@@ -714,7 +926,8 @@ footer p,footer a{color:#D6E8F8}
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Kayıt Ol
         </a>
       </article>
@@ -738,7 +951,8 @@ footer p,footer a{color:#D6E8F8}
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Kayıt Ol
         </a>
       </article>
@@ -761,7 +975,8 @@ footer p,footer a{color:#D6E8F8}
 
         <a class="button"
            href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Kayıt Ol
         </a>
       </article>
@@ -774,7 +989,8 @@ footer p,footer a{color:#D6E8F8}
 <section class="hook">
   <div class="container reveal">
     <h2>
-      Hiçbir öğrenci <span class="mark-blue">okuduğunu anlamadan,</span>
+      Hiçbir öğrenci
+      <span class="mark-blue">okuduğunu anlamadan,</span>
       <span class="mark-purple">soru yorumlama becerisi kazanmadan</span>
       sonraki sınıfa geçmemeli.
     </h2>
@@ -796,13 +1012,15 @@ footer p,footer a{color:#D6E8F8}
     <div class="cta-buttons">
       <a class="button white"
          href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
         Kayıt Ol
       </a>
 
       <a class="button green"
          href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
         <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
         WhatsApp'tan Bilgi Al
       </a>
@@ -822,38 +1040,66 @@ footer p,footer a{color:#D6E8F8}
 
     <div>
       <a href="https://www.instagram.com/yazili.hazirlik/"
-         target="_blank" rel="noopener noreferrer">Instagram</a>
+         target="_blank"
+         rel="noopener noreferrer">Instagram</a>
       &nbsp; · &nbsp;
       <a href="https://wa.me/905529448155"
-         target="_blank" rel="noopener noreferrer">WhatsApp</a>
+         target="_blank"
+         rel="noopener noreferrer">WhatsApp</a>
     </div>
   </div>
 </footer>
 
 <a class="floating-whatsapp"
    href="https://wa.me/905529448155?text=Merhaba%2C%20anlayarak%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-   target="_blank" rel="noopener noreferrer"
+   target="_blank"
+   rel="noopener noreferrer"
    aria-label="WhatsApp üzerinden bilgi alın">
   <svg class="wa-icon"><use href="#whatsapp-icon"/></svg>
   WhatsApp
 </a>
 
 <script>
-const items=document.querySelectorAll(".reveal");
+/* Kartların kaydırıldıkça görünmesi */
+const revealItems=document.querySelectorAll(".reveal");
+
+/* Yalnızca vurgulanmış kelimelerin boyanması */
+const highlightItems=document.querySelectorAll(
+  ".mark-blue, .mark-purple, .mark-yellow"
+);
 
 if("IntersectionObserver" in window){
-  const observer=new IntersectionObserver(entries=>{
+
+  const revealObserver=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
-  },{threshold:0.08});
+  },{
+    threshold:0.08
+  });
 
-  items.forEach(item=>observer.observe(item));
+  revealItems.forEach(item=>revealObserver.observe(item));
+
+  const highlightObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("highlighted");
+        highlightObserver.unobserve(entry.target);
+      }
+    });
+  },{
+    threshold:0.65,
+    rootMargin:"0px 0px -5% 0px"
+  });
+
+  highlightItems.forEach(item=>highlightObserver.observe(item));
+
 }else{
-  items.forEach(item=>item.classList.add("visible"));
+  revealItems.forEach(item=>item.classList.add("visible"));
+  highlightItems.forEach(item=>item.classList.add("highlighted"));
 }
 </script>
 
