@@ -119,44 +119,66 @@ p{font-size:17px}
   transform:translateY(0);
 }
 
-/* RENKLİ VURGULAR */
+/*
+  GÜÇLENDİRİLMİŞ RENKLİ VURGULAR
+  Vurgular ilk andan itibaren renkli görünür.
+  Kaydırıldığında hafif bir animasyon oluşur.
+*/
 
 .highlight{
-  position:relative;
-  z-index:0;
   display:inline;
   font-weight:900;
-  padding:0 .08em;
+  color:#113f78;
+  padding:.08em .13em;
+  border-radius:6px;
+  background:linear-gradient(
+    90deg,
+    #b9eaff 0%,
+    #82ccff 55%,
+    #b4d8ff 100%
+  );
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
+  -webkit-box-shadow:inset 0 -2px 0 rgba(10,111,199,.16);
+  box-shadow:inset 0 -2px 0 rgba(10,111,199,.16);
 }
 
-.highlight::before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  left:0;
-  right:0;
-  top:12%;
-  bottom:0;
-  border-radius:5px;
-  background:linear-gradient(90deg,#a7e2ff,#77c7ff);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .9s ease;
+.highlight.yellow{
+  color:#674500;
+  background:linear-gradient(
+    90deg,
+    #fff1b1 0%,
+    #ffdc7b 55%,
+    #ffe9a1 100%
+  );
+  -webkit-box-shadow:inset 0 -2px 0 rgba(185,126,8,.18);
+  box-shadow:inset 0 -2px 0 rgba(185,126,8,.18);
 }
 
-.highlight.yellow::before{
-  background:linear-gradient(90deg,#fff0a5,#ffd56b);
+.highlight.purple{
+  color:#51318d;
+  background:linear-gradient(
+    90deg,
+    #eadbff 0%,
+    #cfb8ff 55%,
+    #e4d5ff 100%
+  );
+  -webkit-box-shadow:inset 0 -2px 0 rgba(114,63,194,.16);
+  box-shadow:inset 0 -2px 0 rgba(114,63,194,.16);
 }
 
-.highlight.purple::before{
-  background:linear-gradient(90deg,#e4d5ff,#c6afff);
+.reveal.visible .highlight{
+  animation:highlightAppear .8s ease both;
 }
 
-.reveal.visible .highlight::before,
-.highlight.visible::before{
-  transform:scaleX(1);
+@keyframes highlightAppear{
+  from{
+    filter:saturate(.65);
+    box-shadow:inset 0 -2px 0 transparent;
+  }
+  to{
+    filter:saturate(1);
+  }
 }
 
 /* MENÜ */
@@ -279,19 +301,27 @@ nav a:hover{color:var(--blue)}
   width:100%;
 }
 
+/* FOTOĞRAF KARTIYLA UYUMLU SARI ETİKET */
+
 .teacher-label{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:8px 17px;
+  padding:9px 20px;
   margin-bottom:13px;
   border-radius:100px;
-  background:linear-gradient(110deg,#dceeff,#e8d9ff);
-  border:1px solid #b8d4fb;
-  color:#174c9c;
+  background:linear-gradient(
+    110deg,
+    #fff4c5 0%,
+    #ffe49a 55%,
+    #f4ddff 100%
+  );
+  border:2px solid #e8c96e;
+  color:#6d4a13;
   font-size:13px;
   font-weight:900;
   letter-spacing:.04em;
+  box-shadow:0 7px 20px rgba(180,139,53,.12);
 }
 
 .teacher{
@@ -479,7 +509,7 @@ nav a:hover{color:var(--blue)}
 .panel-caption{
   font-size:clamp(24px,3vw,37px);
   font-weight:900;
-  line-height:1.45;
+  line-height:1.65;
   margin:30px 0;
 }
 
@@ -493,7 +523,7 @@ nav a:hover{color:var(--blue)}
 
 .skills{
   font-size:clamp(21px,2.8vw,30px);
-  line-height:1.65;
+  line-height:1.85;
   max-width:950px;
   margin:0;
 }
@@ -549,7 +579,7 @@ nav a:hover{color:var(--blue)}
 .step h3{margin-bottom:13px}
 .step p{margin-bottom:0}
 
-/* PROGRAMLARDAN ÖNCEKİ YENİ ALAN */
+/* PROGRAMLARDAN ÖNCEKİ TANITIM */
 
 .program-promo{
   padding:70px 0 30px;
@@ -575,6 +605,7 @@ nav a:hover{color:var(--blue)}
 .promo-box p{
   font-size:clamp(18px,2.2vw,23px);
   font-weight:650;
+  line-height:1.9;
   margin:0;
 }
 
@@ -716,8 +747,8 @@ nav a:hover{color:var(--blue)}
   font-weight:900;
   color:#153a7c;
   background:linear-gradient(90deg,#ffe6a0,#ffd36d);
-  padding:0 .12em;
-  border-radius:5px;
+  padding:.08em .14em;
+  border-radius:6px;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
 }
@@ -762,7 +793,7 @@ footer{
 
 footer a{color:#a9ddff}
 
-/* SAĞ ALT WHATSAPP BALONCUĞU */
+/* SAĞ ALT WHATSAPP */
 
 .floating-wa{
   position:fixed;
@@ -889,21 +920,30 @@ footer a{color:#a9ddff}
   *,*::before,*::after{
     scroll-behavior:auto!important;
     transition:none!important;
+    animation:none!important;
   }
 
   .reveal{
     opacity:1;
     transform:none;
   }
-
-  .highlight::before{
-    transform:scaleX(1);
-  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- WHATSAPP SİMGESİ: TÜM BUTONLARDA AYNI -->
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  style="position:absolute;width:0;height:0;overflow:hidden"
+  aria-hidden="true"
+>
+  <symbol id="whatsapp-logo" viewBox="0 0 32 32">
+    <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.2 12.2 0 0 1-6.2-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.4Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.4 1.4-.2.2-.4.3-.8.1a10 10 0 0 1-3-1.9 11.3 11.3 0 0 1-2.1-2.7c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.2.7.9.3 1.8.2 2.5.2.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.6-.5Z"/>
+  </symbol>
+</svg>
 
 <header>
   <div class="container nav">
@@ -976,8 +1016,8 @@ footer a{color:#a9ddff}
             rel="noopener"
             href="https://wa.me/905529448155?text=Merhaba%2C%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
           >
-            <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
-              <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.2 12.2 0 0 1-6.2-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.4Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.4 1.4-.2.2-.4.3-.8.1a10 10 0 0 1-3-1.9 11.3 11.3 0 0 1-2.1-2.7c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.2.7.9.3 1.8.2 2.5.2.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.6-.5Z"/>
+            <svg class="whatsapp-icon" aria-hidden="true">
+              <use href="#whatsapp-logo"></use>
             </svg>
             WhatsApp'tan Bilgi Al
           </a>
@@ -1021,8 +1061,8 @@ footer a{color:#a9ddff}
         <p>
           Denemelerdeki
           <span class="highlight yellow">
-            net performansını yükseltmek.
-          </span>
+            net performansını yükseltmek
+          </span>.
         </p>
       </div>
 
@@ -1041,8 +1081,8 @@ footer a{color:#a9ddff}
         <p>
           Paragraf çözme tekniklerini öğrenerek
           <span class="highlight">
-            paragraf netlerini artırmak.
-          </span>
+            paragraf netlerini artırmak
+          </span>.
         </p>
       </div>
 
@@ -1051,8 +1091,8 @@ footer a{color:#a9ddff}
         <p>
           Okuma hızını artırmak ve sınavlarda yaşadığı
           <span class="highlight yellow">
-            süre problemini çözmek.
-          </span>
+            süre problemini çözmek
+          </span>.
         </p>
       </div>
 
@@ -1093,8 +1133,9 @@ footer a{color:#a9ddff}
 
       <div class="suitability-item reveal">
         Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve
+        anlamak için
         <span class="highlight purple">
-          anlamak için birkaç kez okuyorsa,
+          birkaç kez okuyorsa,
         </span>
       </div>
 
@@ -1181,10 +1222,16 @@ footer a{color:#a9ddff}
 
       <div class="skills-card">
         <p class="skills">
-          <span class="highlight">Göz kaslarını esnetme,</span>
-          <span class="highlight yellow">kelime haznesini artırma</span>
+          <span class="highlight">
+            Göz kaslarını esnetme,
+          </span>
+          <span class="highlight yellow">
+            kelime haznesini artırma
+          </span>
           ve
-          <span class="highlight purple">soru hakimiyeti</span>
+          <span class="highlight purple">
+            soru hakimiyeti
+          </span>
           kazanma üzerine yaptığımız çalışmalarla
           <span class="highlight">
             geleceğin öğrenme modelini
@@ -1277,7 +1324,7 @@ footer a{color:#a9ddff}
   </div>
 </section>
 
-<!-- YENİ TANITIM ALANI -->
+<!-- PROGRAM ÖNCESİ TANITIM -->
 
 <section class="program-promo">
   <div class="container">
@@ -1296,11 +1343,11 @@ footer a{color:#a9ddff}
         <span class="highlight">
           öğrenme sürecine yatırım
         </span>
-        yaparken
-        <span class="highlight purple">
-          avantajlı programlarımızdan
+        yaparken yılın son kayıt dönemine özel
+        <span class="highlight yellow">
+          avantajlı
         </span>
-        yararlanın.
+        fiyatlardan yararlanın.
       </p>
 
     </div>
@@ -1384,7 +1431,7 @@ footer a{color:#a9ddff}
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
         >
-          Kayıt Ol ↗
+          Kayıt Ol
         </a>
 
       </article>
@@ -1443,7 +1490,7 @@ footer a{color:#a9ddff}
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
         >
-          Kayıt Ol ↗
+          Kayıt Ol
         </a>
 
       </article>
@@ -1496,7 +1543,7 @@ footer a{color:#a9ddff}
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
         >
-          Kayıt Ol ↗
+          Kayıt Ol
         </a>
 
       </article>
@@ -1585,7 +1632,7 @@ footer a{color:#a9ddff}
 
     <h2 class="reveal">
       Çocuğunuzun okuma becerilerini geliştirmek için
-      <span class="highlight">
+      <span class="highlight yellow">
         ilk adımı atın.
       </span>
     </h2>
@@ -1599,13 +1646,15 @@ footer a{color:#a9ddff}
 
     <div class="final-actions reveal">
 
+      <!-- SON KAYIT OL BUTONUNDA OK İŞARETİ YOK -->
+
       <a
         class="btn"
         target="_blank"
         rel="noopener"
         href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
       >
-        Kayıt Ol ↗
+        Kayıt Ol
       </a>
 
       <a
@@ -1614,8 +1663,8 @@ footer a{color:#a9ddff}
         rel="noopener"
         href="https://wa.me/905529448155?text=Merhaba%2C%20e%C4%9Fitim%20programlar%C4%B1n%C4%B1z%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
       >
-        <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.2 12.2 0 0 1-6.2-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.4Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1a10 10 0 0 1-3-1.9 11.3 11.3 0 0 1-2.1-2.7c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.2.7.9.3 1.8.2 2.5.2.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.6-.5Z"/>
+        <svg class="whatsapp-icon" aria-hidden="true">
+          <use href="#whatsapp-logo"></use>
         </svg>
         WhatsApp'tan Bilgi Al
       </a>
@@ -1663,8 +1712,8 @@ footer a{color:#a9ddff}
   title="WhatsApp'tan Bilgi Al"
   href="https://wa.me/905529448155?text=Merhaba%2C%20h%C4%B1zl%C4%B1%20okuma%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
 >
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.2 12.2 0 0 1-6.2-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.4Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1a10 10 0 0 1-3-1.9 11.3 11.3 0 0 1-2.1-2.7c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.2.7.9.3 1.8.2 2.5.2.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.6-.5Z"/>
+  <svg aria-hidden="true">
+    <use href="#whatsapp-logo"></use>
   </svg>
 </a>
 
