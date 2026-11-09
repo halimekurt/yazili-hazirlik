@@ -3,9 +3,9 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#168eea">
-<meta name="description" content="5, 6, 7 ve 8. sınıf öğrencileri için online anlayarak hızlı okuma, odaklanma ve paragraf eğitimi.">
+<meta name="description" content="5, 6, 7 ve 8. sınıf öğrencileri için online anlayarak hızlı okuma eğitimi.">
 <title>Yazılı Hazırlık | Anlayarak Hızlı Okuma</title>
 
 <style>
@@ -15,13 +15,10 @@
   --purple:#7844c9;
   --ink:#14213d;
   --muted:#53647b;
-  --green:#25D366;
 }
 
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
@@ -29,34 +26,18 @@ body{
   background:#fff;
   line-height:1.65;
 }
-
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 .container{width:min(1140px,calc(100% - 40px));margin:auto}
 section{padding:90px 0}
 h1,h2,h3,p{margin-top:0}
-
-h1,h2,h3{
-  line-height:1.15;
-  letter-spacing:-.035em;
-}
-
-h1{
-  font-size:clamp(43px,6.4vw,84px);
-  font-weight:900;
-}
-
-h2{
-  font-size:clamp(31px,4.2vw,54px);
-  font-weight:900;
-}
-
+h1,h2,h3{line-height:1.15;letter-spacing:-.035em}
+h1{font-size:clamp(43px,6.4vw,84px);font-weight:900}
+h2{font-size:clamp(31px,4.2vw,54px);font-weight:900}
 h3{font-size:25px}
 p{font-size:17px}
-
 .center{text-align:center}
 .muted{color:var(--muted)}
-
 .eyebrow{
   font-size:13px;
   font-weight:900;
@@ -65,64 +46,44 @@ p{font-size:17px}
   color:var(--deep);
   margin-bottom:17px;
 }
-
-.section-intro{
-  max-width:900px;
-  margin-bottom:40px;
-}
+.section-intro{max-width:900px;margin-bottom:40px}
 
 /* CANLI MAVİ GEÇİŞLİ BAŞLIKLAR */
 
 .gradient-text{
   display:inline;
   color:#146cdb;
-  background:linear-gradient(
-    105deg,
-    #0756b9 0%,
-    #087edc 35%,
-    #2666d8 65%,
-    #7040c7 100%
-  );
+  background:linear-gradient(105deg,#0756b9,#087edc 35%,#2666d8 65%,#7040c7);
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
 }
-
 .gradient-heading{
   color:#1269cc;
-  background:linear-gradient(
-    100deg,
-    #0755b7 0%,
-    #0a89e4 35%,
-    #345bd4 70%,
-    #7841ca 100%
-  );
+  background:linear-gradient(100deg,#0755b7,#0a89e4 35%,#345bd4 70%,#7841ca);
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-/* KAYDIRDIKÇA GÖRÜNME */
+/* SAYFAYI KAYDIRDIKÇA GÖRÜNME */
 
 .reveal{
   opacity:0;
   transform:translateY(35px);
-  transition:
-    opacity .75s ease,
-    transform .75s ease;
+  transition:opacity .75s ease,transform .75s ease;
 }
-
 .reveal.visible{
   opacity:1;
   transform:translateY(0);
 }
 
 /*
-  GÜÇLENDİRİLMİŞ RENKLİ VURGULAR
-  Vurgular ilk andan itibaren renkli görünür.
-  Kaydırıldığında hafif bir animasyon oluşur.
+  YENİ VURGU ANİMASYONU
+  Renk kelimeyi soldan sağa kaplar.
+  Animasyon bittiğinde renk kalır.
 */
 
 .highlight{
@@ -131,54 +92,31 @@ p{font-size:17px}
   color:#113f78;
   padding:.08em .13em;
   border-radius:6px;
-  background:linear-gradient(
-    90deg,
-    #b9eaff 0%,
-    #82ccff 55%,
-    #b4d8ff 100%
-  );
+  background-image:linear-gradient(90deg,#b9eaff,#82ccff 55%,#b4d8ff);
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:0% 100%;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
-  -webkit-box-shadow:inset 0 -2px 0 rgba(10,111,199,.16);
-  box-shadow:inset 0 -2px 0 rgba(10,111,199,.16);
 }
 
 .highlight.yellow{
   color:#674500;
-  background:linear-gradient(
-    90deg,
-    #fff1b1 0%,
-    #ffdc7b 55%,
-    #ffe9a1 100%
-  );
-  -webkit-box-shadow:inset 0 -2px 0 rgba(185,126,8,.18);
-  box-shadow:inset 0 -2px 0 rgba(185,126,8,.18);
+  background-image:linear-gradient(90deg,#fff1b1,#ffdc7b 55%,#ffe9a1);
 }
 
 .highlight.purple{
   color:#51318d;
-  background:linear-gradient(
-    90deg,
-    #eadbff 0%,
-    #cfb8ff 55%,
-    #e4d5ff 100%
-  );
-  -webkit-box-shadow:inset 0 -2px 0 rgba(114,63,194,.16);
-  box-shadow:inset 0 -2px 0 rgba(114,63,194,.16);
+  background-image:linear-gradient(90deg,#eadbff,#cfb8ff 55%,#e4d5ff);
 }
 
 .reveal.visible .highlight{
-  animation:highlightAppear .8s ease both;
+  animation:highlightSweep 1.25s cubic-bezier(.2,.65,.2,1) .25s forwards;
 }
 
-@keyframes highlightAppear{
-  from{
-    filter:saturate(.65);
-    box-shadow:inset 0 -2px 0 transparent;
-  }
-  to{
-    filter:saturate(1);
-  }
+@keyframes highlightSweep{
+  from{background-size:0% 100%}
+  to{background-size:100% 100%}
 }
 
 /* MENÜ */
@@ -191,7 +129,6 @@ header{
   backdrop-filter:blur(16px);
   border-bottom:1px solid #e2ebf8;
 }
-
 .nav{
   min-height:78px;
   display:flex;
@@ -199,7 +136,6 @@ header{
   justify-content:space-between;
   gap:18px;
 }
-
 .brand{
   display:flex;
   align-items:center;
@@ -209,14 +145,12 @@ header{
   color:var(--deep);
   white-space:nowrap;
 }
-
 .brand img{
   width:49px;
   height:49px;
   border-radius:50%;
   object-fit:cover;
 }
-
 nav{
   display:flex;
   align-items:center;
@@ -224,7 +158,6 @@ nav{
   font-size:14px;
   font-weight:800;
 }
-
 nav a:hover{color:var(--blue)}
 
 /* BUTONLAR */
@@ -244,23 +177,19 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 10px 25px rgba(24,142,234,.2);
   transition:transform .2s,box-shadow .2s;
 }
-
 .btn:hover{
   transform:translateY(-3px);
   box-shadow:0 15px 30px rgba(24,142,234,.3);
 }
-
 .btn-whatsapp{
   background:#25D366;
   color:#fff;
   box-shadow:0 10px 24px rgba(37,211,102,.24);
 }
-
 .btn-whatsapp:hover{
   background:#1ebe5a;
   box-shadow:0 14px 28px rgba(37,211,102,.32);
 }
-
 .whatsapp-icon{
   display:block;
   width:20px;
@@ -269,7 +198,7 @@ nav a:hover{color:var(--blue)}
   fill:currentColor;
 }
 
-/* HERO */
+/* GİRİŞ */
 
 .hero{
   background:
@@ -278,44 +207,30 @@ nav a:hover{color:var(--blue)}
   padding:92px 0 105px;
   overflow:hidden;
 }
-
 .hero-grid{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:55px;
   align-items:center;
 }
-
 .hero h1{margin-bottom:26px}
 .hero h1>span{display:block}
-
 .hero .lead{
   font-size:21px;
   max-width:650px;
   color:#40536d;
 }
 
-/* EĞİTMEN KARTI */
+/* EĞİTMEN */
 
-.teacher-area{
-  width:100%;
-}
-
-/* FOTOĞRAF KARTIYLA UYUMLU SARI ETİKET */
-
+.teacher-area{width:100%}
 .teacher-label{
   display:inline-flex;
   align-items:center;
-  gap:8px;
   padding:9px 20px;
   margin-bottom:13px;
   border-radius:100px;
-  background:linear-gradient(
-    110deg,
-    #fff4c5 0%,
-    #ffe49a 55%,
-    #f4ddff 100%
-  );
+  background:linear-gradient(110deg,#fff4c5,#ffe49a 55%,#f4ddff);
   border:2px solid #e8c96e;
   color:#6d4a13;
   font-size:13px;
@@ -323,7 +238,6 @@ nav a:hover{color:var(--blue)}
   letter-spacing:.04em;
   box-shadow:0 7px 20px rgba(180,139,53,.12);
 }
-
 .teacher{
   display:flex;
   align-items:center;
@@ -334,7 +248,6 @@ nav a:hover{color:var(--blue)}
   border-radius:28px;
   box-shadow:0 25px 60px rgba(120,104,80,.13);
 }
-
 .teacher-photo{
   width:145px;
   height:195px;
@@ -343,49 +256,32 @@ nav a:hover{color:var(--blue)}
   border-radius:18px;
   background:#ead9bb;
 }
-
 .teacher-photo img{
   display:block;
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center;
 }
+.teacher h3{font-size:24px;margin-bottom:9px}
+.teacher p{font-size:14px;font-weight:700;margin-bottom:16px}
+.teacher .btn{font-size:13px;padding:12px 15px}
 
-.teacher h3{
-  font-size:24px;
-  margin-bottom:9px;
-}
-
-.teacher p{
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:16px;
-}
-
-.teacher .btn{
-  font-size:13px;
-  padding:12px 15px;
-}
-
-/* BÖLÜM ARKA PLANLARI */
+/* BÖLÜMLER */
 
 .section-blue{
   background:linear-gradient(135deg,#f2faff,#e9f3ff 60%,#f4efff);
 }
-
 .section-soft{
   background:linear-gradient(135deg,#fbfcff,#f4f8ff,#fffdf5);
 }
 
-/* KAZANIM KARTLARI */
+/* KAZANIMLAR */
 
 .cards{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:20px;
 }
-
 .card{
   border:2px solid #8cc8f5;
   border-radius:25px;
@@ -393,64 +289,40 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 13px 30px rgba(30,91,155,.08);
   transition:transform .25s,box-shadow .25s;
 }
-
-.card:hover,
-.step:hover,
-.program:hover,
-.suitability-item:hover{
+.card:hover,.step:hover,.program:hover,.suitability-item:hover{
   transform:translateY(-4px);
   box-shadow:0 18px 38px rgba(45,96,164,.13);
 }
-
 .benefit{
   display:flex;
   gap:16px;
   align-items:flex-start;
 }
-
 .benefit:nth-child(3n+1){
   background:linear-gradient(135deg,#f9fdff,#e3f3ff);
   border-color:#79bff3;
 }
-
 .benefit:nth-child(3n+2){
   background:linear-gradient(135deg,#fff,#f0e7ff);
   border-color:#c5a6f0;
 }
-
 .benefit:nth-child(3n){
   background:linear-gradient(135deg,#fffefa,#fff1c8);
   border-color:#efce72;
 }
-
 .benefit-number{
   font-size:29px;
   font-weight:900;
   color:#087bd4;
   line-height:1;
 }
+.benefit:nth-child(3n+2) .benefit-number{color:#8752cf}
+.benefit:nth-child(3n) .benefit-number{color:#ba8714}
+.benefit p{font-size:19px;font-weight:700;margin:0}
 
-.benefit:nth-child(3n+2) .benefit-number{
-  color:#8752cf;
-}
+/* UYGUNLUK */
 
-.benefit:nth-child(3n) .benefit-number{
-  color:#ba8714;
-}
-
-.benefit p{
-  font-size:19px;
-  font-weight:700;
-  margin:0;
-}
-
-/* UYGUNLUK KARTLARI */
-
-.suitability-list{
-  display:grid;
-  gap:16px;
-}
-
+.suitability-list{display:grid;gap:16px}
 .suitability-item{
   border:2px solid #8dc7f3;
   border-radius:21px;
@@ -460,27 +332,22 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 9px 25px rgba(32,98,171,.06);
   transition:transform .25s,box-shadow .25s;
 }
-
 .suitability-item:nth-child(4n+1){
   background:linear-gradient(110deg,#fff,#e5f4ff);
   border-color:#82c3f4;
 }
-
 .suitability-item:nth-child(4n+2){
   background:linear-gradient(110deg,#fff,#f0e6ff);
   border-color:#c8b1f1;
 }
-
 .suitability-item:nth-child(4n+3){
   background:linear-gradient(110deg,#fff,#fff2cc);
   border-color:#efd88f;
 }
-
 .suitability-item:nth-child(4n){
   background:linear-gradient(110deg,#fff,#e8f4ff);
   border-color:#82c3f4;
 }
-
 .note{
   margin-top:24px;
   padding:23px 26px;
@@ -490,7 +357,7 @@ nav a:hover{color:var(--blue)}
   font-size:16px;
 }
 
-/* PANEL GÖRSELLERİ */
+/* PANELLER */
 
 .panel-image{
   display:block;
@@ -500,19 +367,16 @@ nav a:hover{color:var(--blue)}
   border:2px solid #d8e7f7;
   box-shadow:0 20px 50px rgba(24,76,145,.1);
 }
-
 .panel-wrap{
   max-width:970px;
   margin:35px auto 65px;
 }
-
 .panel-caption{
   font-size:clamp(24px,3vw,37px);
   font-weight:900;
   line-height:1.65;
   margin:30px 0;
 }
-
 .skills-card{
   padding:30px;
   border:2px solid #a5cafa;
@@ -520,7 +384,6 @@ nav a:hover{color:var(--blue)}
   background:linear-gradient(125deg,#e9f5ff,#f2eaff 55%,#fff7da);
   box-shadow:0 14px 34px rgba(32,98,171,.08);
 }
-
 .skills{
   font-size:clamp(21px,2.8vw,30px);
   line-height:1.85;
@@ -535,7 +398,6 @@ nav a:hover{color:var(--blue)}
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:20px;
 }
-
 .step{
   padding:30px;
   border:2px solid #8cc8f5;
@@ -543,27 +405,22 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 13px 30px rgba(30,91,155,.08);
   transition:transform .25s,box-shadow .25s;
 }
-
 .step:nth-child(1){
   background:linear-gradient(135deg,#fff,#e2f3ff);
   border-color:#7ec3f5;
 }
-
 .step:nth-child(2){
   background:linear-gradient(135deg,#fff,#eee3ff);
   border-color:#c5a4f0;
 }
-
 .step:nth-child(3){
   background:linear-gradient(135deg,#fff,#fff0c5);
   border-color:#eacf79;
 }
-
 .step:nth-child(4){
   background:linear-gradient(135deg,#fff,#e6f2ff 65%,#eee5ff);
   border-color:#91b8f3;
 }
-
 .step-number{
   font-size:76px;
   line-height:1;
@@ -571,21 +428,18 @@ nav a:hover{color:var(--blue)}
   color:#2396e6;
   margin-bottom:20px;
 }
-
 .step:nth-child(2) .step-number{color:#9361d7}
 .step:nth-child(3) .step-number{color:#c49b25}
 .step:nth-child(4) .step-number{color:#4279d9}
-
 .step h3{margin-bottom:13px}
 .step p{margin-bottom:0}
 
-/* PROGRAMLARDAN ÖNCEKİ TANITIM */
+/* PROGRAM TANITIMI */
 
 .program-promo{
   padding:70px 0 30px;
   background:linear-gradient(135deg,#e7f5ff,#f1eaff 55%,#fff4d4);
 }
-
 .promo-box{
   max-width:1000px;
   margin:auto;
@@ -596,12 +450,10 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 18px 40px rgba(35,92,155,.09);
   text-align:center;
 }
-
 .promo-box h2{
   font-size:clamp(30px,4vw,48px);
   margin-bottom:23px;
 }
-
 .promo-box p{
   font-size:clamp(18px,2.2vw,23px);
   font-weight:650;
@@ -611,17 +463,13 @@ nav a:hover{color:var(--blue)}
 
 /* EĞİTİM PROGRAMLARI */
 
-.programs-section{
-  padding-top:60px;
-}
-
+.programs-section{padding-top:60px}
 .program-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:20px;
   align-items:stretch;
 }
-
 .program{
   display:flex;
   flex-direction:column;
@@ -631,22 +479,18 @@ nav a:hover{color:var(--blue)}
   box-shadow:0 15px 40px rgba(25,142,226,.08);
   transition:transform .25s,box-shadow .25s;
 }
-
 .program:nth-child(1){
   background:linear-gradient(145deg,#fff,#eaf6ff);
   border-color:#6cbaf1;
 }
-
 .program:nth-child(2){
   background:linear-gradient(145deg,#fff,#f1eaff);
   border-color:#b69be8;
 }
-
 .program:nth-child(3){
   background:linear-gradient(145deg,#fff,#fff4d8);
   border-color:#e5c77a;
 }
-
 .program-label{
   font-size:12px;
   letter-spacing:.12em;
@@ -654,12 +498,7 @@ nav a:hover{color:var(--blue)}
   font-weight:900;
   margin-bottom:14px;
 }
-
-.program h3{
-  font-size:27px;
-  margin-bottom:13px;
-}
-
+.program h3{font-size:27px;margin-bottom:13px}
 .price{
   font-size:39px;
   font-weight:900;
@@ -667,28 +506,11 @@ nav a:hover{color:var(--blue)}
   line-height:1.2;
   margin:13px 0 20px;
 }
-
-.program p{
-  font-size:15px;
-  line-height:1.7;
-}
-
-.program .details{
-  color:#7542bd;
-  font-weight:900;
-}
-
-.purple-detail{
-  color:#7542bd;
-  font-weight:850;
-}
-
+.program p{font-size:15px;line-height:1.7}
+.program .details{color:#7542bd;font-weight:900}
+.purple-detail{color:#7542bd;font-weight:850}
 .program-content{flex:1}
-
-.program .btn{
-  margin-top:auto;
-  width:100%;
-}
+.program .btn{margin-top:auto;width:100%}
 
 /* SONUÇLAR */
 
@@ -698,7 +520,6 @@ nav a:hover{color:var(--blue)}
   max-width:790px;
   margin:35px auto 0;
 }
-
 .results img{
   display:block;
   width:100%;
@@ -706,7 +527,6 @@ nav a:hover{color:var(--blue)}
   border-radius:20px;
   border:1px solid #dfe9f5;
 }
-
 .result-card{
   padding:12px;
   border:2px solid #a4c9f0;
@@ -714,34 +534,29 @@ nav a:hover{color:var(--blue)}
   background:linear-gradient(135deg,#fff,#edf6ff);
   box-shadow:0 14px 35px rgba(20,75,140,.09);
 }
-
 .result-card:nth-child(3n+2){
   background:linear-gradient(135deg,#fff,#f1eaff);
   border-color:#c9b4ed;
 }
-
 .result-card:nth-child(3n){
   background:linear-gradient(135deg,#fff,#fff5d9);
   border-color:#ebd59c;
 }
 
-/* SON ÇAĞRI */
+/* KAPANIŞ */
 
 .final{
   background:linear-gradient(145deg,#e4f6ff,#f1f3ff 50%,#fff3cf);
   text-align:center;
 }
-
 .final h2{
   max-width:1000px;
   margin:0 auto 35px;
 }
-
 .final p{
   max-width:700px;
   margin:0 auto 26px;
 }
-
 .final-highlight{
   display:inline;
   font-weight:900;
@@ -752,7 +567,6 @@ nav a:hover{color:var(--blue)}
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
 }
-
 .final-actions{
   display:flex;
   justify-content:center;
@@ -760,14 +574,13 @@ nav a:hover{color:var(--blue)}
   flex-wrap:wrap;
 }
 
-/* FOOTER */
+/* ALT BİLGİ */
 
 footer{
   background:#112847;
   color:#eaf5ff;
   padding:45px 0;
 }
-
 .footer-row{
   display:flex;
   align-items:center;
@@ -775,7 +588,6 @@ footer{
   gap:20px;
   flex-wrap:wrap;
 }
-
 .footer-brand{
   display:flex;
   align-items:center;
@@ -783,17 +595,15 @@ footer{
   font-weight:900;
   font-size:21px;
 }
-
 .footer-brand img{
   width:70px;
   height:70px;
   object-fit:cover;
   border-radius:50%;
 }
-
 footer a{color:#a9ddff}
 
-/* SAĞ ALT WHATSAPP */
+/* WHATSAPP BALONCUĞU */
 
 .floating-wa{
   position:fixed;
@@ -811,12 +621,10 @@ footer a{color:#a9ddff}
   box-shadow:0 10px 30px rgba(20,143,69,.35);
   transition:transform .2s,background .2s;
 }
-
 .floating-wa:hover{
   transform:scale(1.08);
   background:#1ebe5a;
 }
-
 .floating-wa svg{
   width:34px;
   height:34px;
@@ -836,85 +644,43 @@ footer a{color:#a9ddff}
 /* TELEFON */
 
 @media(max-width:700px){
-  .container{
-    width:min(calc(100% - 30px),1140px);
-  }
-
+  .container{width:min(calc(100% - 30px),1140px)}
   section{padding:65px 0}
-
   .nav{min-height:67px}
   .brand{font-size:15px}
-
-  .brand img{
-    width:40px;
-    height:40px;
-  }
-
+  .brand img{width:40px;height:40px}
   nav a:not(.btn){display:none}
-
-  nav .btn{
-    font-size:11px;
-    padding:11px 13px;
-  }
-
+  nav .btn{font-size:11px;padding:11px 13px}
   .hero{padding:65px 0 75px}
   .hero-grid{gap:30px}
-
-  h1{
-    font-size:clamp(40px,10vw,62px);
-  }
-
+  h1{font-size:clamp(40px,10vw,62px)}
   .hero .lead{font-size:18px}
-
-  .teacher{
-    gap:12px;
-    padding:12px;
-    border-radius:20px;
-  }
-
+  .teacher{gap:12px;padding:12px;border-radius:20px}
   .teacher-photo{
     width:105px;
     height:155px;
     border-radius:13px;
   }
-
   .teacher h3{font-size:20px}
   .teacher p{font-size:12px}
-
-  .teacher .btn{
-    font-size:11px;
-    padding:10px 11px;
-  }
-
+  .teacher .btn{font-size:11px;padding:10px 11px}
   .cards,.steps{grid-template-columns:1fr}
   .card,.step{padding:23px}
   .suitability-item{font-size:17px}
   .step-number{font-size:65px}
-
-  .promo-box{
-    padding:30px 20px;
-  }
-
-  .skills-card{
-    padding:22px;
-  }
-
+  .promo-box{padding:30px 20px}
+  .skills-card{padding:22px}
   .program{padding:24px}
-
   .floating-wa{
     width:56px;
     height:56px;
     right:14px;
     bottom:14px;
   }
-
-  .floating-wa svg{
-    width:32px;
-    height:32px;
-  }
+  .floating-wa svg{width:32px;height:32px}
 }
 
-/* ERİŞİLEBİLİRLİK */
+/* HAREKET AZALTMA TERCİHİ */
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -922,18 +688,15 @@ footer a{color:#a9ddff}
     transition:none!important;
     animation:none!important;
   }
-
-  .reveal{
-    opacity:1;
-    transform:none;
-  }
+  .reveal{opacity:1;transform:none}
+  .highlight{background-size:100% 100%}
 }
 </style>
 </head>
 
 <body>
 
-<!-- WHATSAPP SİMGESİ: TÜM BUTONLARDA AYNI -->
+<!-- WHATSAPP LOGOSU -->
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -947,19 +710,16 @@ footer a{color:#a9ddff}
 
 <header>
   <div class="container nav">
-
     <a class="brand" href="#ust">
       <img src="IMG_1617.jpg" alt="Yazılı Hazırlık logosu">
       <span>Yazılı Hazırlık</span>
     </a>
-
     <nav aria-label="Ana menü">
       <a href="#kazanimlar">Kazanımlar</a>
       <a href="#surec">Nasıl İlerliyoruz?</a>
       <a href="#sonuclar">Sonuçlar</a>
       <a class="btn" href="#programlar">Programları İncele</a>
     </nav>
-
   </div>
 </header>
 
@@ -969,20 +729,15 @@ footer a{color:#a9ddff}
 
 <section class="hero" id="ust">
   <div class="container hero-grid">
-
     <div>
       <div class="eyebrow reveal">
         Anlayarak Hızlı Okuma Eğitimi
       </div>
-
       <h1 class="reveal">
         <span>Hızlı okusun.</span>
         <span>Doğru anlasın.</span>
-        <span>
-          <span class="highlight">Netleri artsın.</span>
-        </span>
+        <span><span class="highlight">Netleri artsın.</span></span>
       </h1>
-
       <p class="lead reveal">
         5, 6, 7 ve 8. sınıf öğrencileri için
         <strong>sınav başarısını artıran okuma sistemi.</strong>
@@ -990,26 +745,18 @@ footer a{color:#a9ddff}
     </div>
 
     <div class="teacher-area reveal">
-
-      <div class="teacher-label">
-        Eğitmeniniz
-      </div>
-
+      <div class="teacher-label">Eğitmeniniz</div>
       <div class="teacher">
-
         <div class="teacher-photo">
           <img src="IMG_1287.jpg" alt="Halime Kurt">
         </div>
-
         <div>
           <h3>Halime Kurt</h3>
-
           <p>
             Anlayarak Hızlı Okuma Eğitmeni<br>
             Eğitim Danışmanı<br>
             Matematik Öğretmeni
           </p>
-
           <a
             class="btn btn-whatsapp"
             target="_blank"
@@ -1022,10 +769,8 @@ footer a{color:#a9ddff}
             WhatsApp'tan Bilgi Al
           </a>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1033,20 +778,16 @@ footer a{color:#a9ddff}
 
 <section id="kazanimlar">
   <div class="container">
-
     <div class="section-intro reveal">
       <div class="eyebrow">Hedeflediğimiz kazanımlar</div>
-
       <h2>
         Öğrenci Bu Eğitimle
         <span class="gradient-text">Neler Kazanacak?</span>
       </h2>
-
       <p>Hedeflediğimiz kazanımlar;</p>
     </div>
 
     <div class="cards">
-
       <div class="card benefit reveal">
         <div class="benefit-number">01</div>
         <p>
@@ -1060,18 +801,14 @@ footer a{color:#a9ddff}
         <div class="benefit-number">02</div>
         <p>
           Denemelerdeki
-          <span class="highlight yellow">
-            net performansını yükseltmek
-          </span>.
+          <span class="highlight yellow">net performansını yükseltmek</span>.
         </p>
       </div>
 
       <div class="card benefit reveal">
         <div class="benefit-number">03</div>
         <p>
-          <span class="highlight purple">
-            Dikkat ve odaklanma
-          </span>
+          <span class="highlight purple">Dikkat ve odaklanma</span>
           becerisini geliştirmek.
         </p>
       </div>
@@ -1080,9 +817,7 @@ footer a{color:#a9ddff}
         <div class="benefit-number">04</div>
         <p>
           Paragraf çözme tekniklerini öğrenerek
-          <span class="highlight">
-            paragraf netlerini artırmak
-          </span>.
+          <span class="highlight">paragraf netlerini artırmak</span>.
         </p>
       </div>
 
@@ -1090,37 +825,28 @@ footer a{color:#a9ddff}
         <div class="benefit-number">05</div>
         <p>
           Okuma hızını artırmak ve sınavlarda yaşadığı
-          <span class="highlight yellow">
-            süre problemini çözmek
-          </span>.
+          <span class="highlight yellow">süre problemini çözmek</span>.
         </p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- KİMLER İÇİN UYGUN -->
+<!-- UYGUNLUK -->
 
 <section class="section-blue">
   <div class="container">
-
     <div class="section-intro reveal">
       <h2>
         Anlayarak Hızlı Okuma Eğitimi
-        <span class="gradient-text">
-          Çocuğunuz İçin Uygun mu?
-        </span>
+        <span class="gradient-text">Çocuğunuz İçin Uygun mu?</span>
       </h2>
     </div>
 
     <div class="suitability-list">
-
       <div class="suitability-item reveal">
         Çocuğunuz deneme sınavlarında
-        <span class="highlight">
-          süre yetiştirmekte zorlanıyorsa,
-        </span>
+        <span class="highlight">süre yetiştirmekte zorlanıyorsa,</span>
       </div>
 
       <div class="suitability-item reveal">
@@ -1134,18 +860,13 @@ footer a{color:#a9ddff}
       <div class="suitability-item reveal">
         Uzun ve bağlam temelli soruları çözmeye çekiniyorsa ve
         anlamak için
-        <span class="highlight purple">
-          birkaç kez okuyorsa,
-        </span>
+        <span class="highlight purple">birkaç kez okuyorsa,</span>
       </div>
 
       <div class="suitability-item reveal">
-        <span class="highlight">
-          Dikkat ve odaklanma problemi
-        </span>
+        <span class="highlight">Dikkat ve odaklanma problemi</span>
         yaşıyorsa
       </div>
-
     </div>
 
     <p class="reveal" style="font-size:23px;font-weight:900;margin-top:30px">
@@ -1157,7 +878,6 @@ footer a{color:#a9ddff}
       istekli öğrenciler için uygundur. Hiç egzersiz yapmak istemeyen
       veya tek derste kesin sonuç bekleyen öğrenciler için uygun değildir.
     </div>
-
   </div>
 </section>
 
@@ -1165,12 +885,8 @@ footer a{color:#a9ddff}
 
 <section id="paneller">
   <div class="container">
-
     <div class="center reveal">
-      <p class="eyebrow">
-        Öğrencinin gelişimini destekleyen
-      </p>
-
+      <p class="eyebrow">Öğrencinin gelişimini destekleyen</p>
       <h2>
         <span class="highlight">Yenilikçi</span>
         ve
@@ -1192,15 +908,9 @@ footer a{color:#a9ddff}
     <div class="center reveal">
       <p class="panel-caption">
         <span class="highlight">10.000+ e-kitap,</span><br>
-        <span class="highlight yellow">
-          bağlam temelli soru çalışmaları,
-        </span><br>
-        <span class="highlight purple">
-          zihin haritaları,
-        </span><br>
-        <span class="highlight">
-          dikkat ve odaklanma egzersizleri
-        </span>
+        <span class="highlight yellow">bağlam temelli soru çalışmaları,</span><br>
+        <span class="highlight purple">zihin haritaları,</span><br>
+        <span class="highlight">dikkat ve odaklanma egzersizleri</span>
       </p>
     </div>
 
@@ -1214,7 +924,6 @@ footer a{color:#a9ddff}
     </div>
 
     <div class="reveal">
-
       <h2>
         Hızlı ve Doğru Okumak İçin Gerekli Olan
         <span class="gradient-text">3 Temel Beceri</span>
@@ -1222,26 +931,16 @@ footer a{color:#a9ddff}
 
       <div class="skills-card">
         <p class="skills">
-          <span class="highlight">
-            Göz kaslarını esnetme,
-          </span>
-          <span class="highlight yellow">
-            kelime haznesini artırma
-          </span>
+          <span class="highlight">Göz kaslarını esnetme,</span>
+          <span class="highlight yellow">kelime haznesini artırma</span>
           ve
-          <span class="highlight purple">
-            soru hakimiyeti
-          </span>
+          <span class="highlight purple">soru hakimiyeti</span>
           kazanma üzerine yaptığımız çalışmalarla
-          <span class="highlight">
-            geleceğin öğrenme modelini
-          </span>
+          <span class="highlight">geleceğin öğrenme modelini</span>
           çocuğunuz için verimli hale getiriyoruz.
         </p>
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -1249,24 +948,15 @@ footer a{color:#a9ddff}
 
 <section id="surec" class="section-blue">
   <div class="container">
-
     <div class="section-intro reveal">
-      <div class="eyebrow">
-        Adım adım planlı bir eğitim süreci
-      </div>
-
-      <h2 class="gradient-heading">
-        Nasıl İlerliyoruz?
-      </h2>
+      <div class="eyebrow">Adım adım planlı bir eğitim süreci</div>
+      <h2 class="gradient-heading">Nasıl İlerliyoruz?</h2>
     </div>
 
     <div class="steps">
-
       <div class="step reveal">
         <div class="step-number">01</div>
-
         <h3>Ölçüm Testi</h3>
-
         <p>
           Başlangıç
           <span class="highlight">okuma hızını</span>
@@ -1278,9 +968,7 @@ footer a{color:#a9ddff}
 
       <div class="step reveal">
         <div class="step-number">02</div>
-
         <h3>Egzersizler</h3>
-
         <p>
           Birlikte
           <span class="highlight purple">göz egzersizleri</span>
@@ -1293,9 +981,7 @@ footer a{color:#a9ddff}
 
       <div class="step reveal">
         <div class="step-number">03</div>
-
         <h3>Paragraf – Maarif Model Soru Çalışmaları</h3>
-
         <p>
           Denemelerde
           <span class="highlight yellow">net artışı</span>
@@ -1307,9 +993,7 @@ footer a{color:#a9ddff}
 
       <div class="step reveal">
         <div class="step-number">04</div>
-
         <h3>Ödevlendirme</h3>
-
         <p>
           Derslerimizin ardından
           <span class="highlight">SuperRead eğitim paneli</span>
@@ -1318,9 +1002,7 @@ footer a{color:#a9ddff}
           ödevlendirme yapıp takibini yapıyorum.
         </p>
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -1328,30 +1010,21 @@ footer a{color:#a9ddff}
 
 <section class="program-promo">
   <div class="container">
-
     <div class="promo-box reveal">
-
       <h2>
         <span class="gradient-text">
           Hızlı Okuma Eğitimi ve 1 Yıllık SuperRead Üyeliği
         </span>
         Bir Arada
       </h2>
-
       <p>
         Çocuğunuzun
-        <span class="highlight">
-          öğrenme sürecine yatırım
-        </span>
+        <span class="highlight">öğrenme sürecine yatırım</span>
         yaparken yılın son kayıt dönemine özel
-        <span class="highlight yellow">
-          avantajlı
-        </span>
+        <span class="highlight yellow">avantajlı</span>
         fiyatlardan yararlanın.
       </p>
-
     </div>
-
   </div>
 </section>
 
@@ -1359,22 +1032,13 @@ footer a{color:#a9ddff}
 
 <section id="programlar" class="programs-section">
   <div class="container">
-
     <div class="section-intro reveal">
-
-      <div class="eyebrow">
-        Size uygun bir başlangıç
-      </div>
-
-      <h2 class="gradient-heading">
-        Eğitim Programlarımız
-      </h2>
-
+      <div class="eyebrow">Size uygun bir başlangıç</div>
+      <h2 class="gradient-heading">Eğitim Programlarımız</h2>
       <p class="muted">
         Çocuğunuzun ihtiyacına ve öğrenme ritmine uygun
         programı keşfedin. Tüm eğitimler online olarak gerçekleştirilir.
       </p>
-
     </div>
 
     <div class="program-grid">
@@ -1382,13 +1046,9 @@ footer a{color:#a9ddff}
       <!-- ATÖLYE -->
 
       <article class="program reveal">
-
         <div class="program-content">
-
           <div class="program-label">İLK ADIM</div>
-
           <h3>Hızlı Okuma Atölyesi</h3>
-
           <div class="price">1.500 TL</div>
 
           <p class="details">
@@ -1422,7 +1082,6 @@ footer a{color:#a9ddff}
           <p class="purple-detail">
             SuperRead üyeliği dahil değildir.
           </p>
-
         </div>
 
         <a
@@ -1430,24 +1089,15 @@ footer a{color:#a9ddff}
           target="_blank"
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-        >
-          Kayıt Ol
-        </a>
-
+        >Kayıt Ol</a>
       </article>
 
       <!-- ARALIK GRUBU -->
 
       <article class="program reveal">
-
         <div class="program-content">
-
-          <div class="program-label">
-            KAPSAMLI GRUP PROGRAMI
-          </div>
-
+          <div class="program-label">KAPSAMLI GRUP PROGRAMI</div>
           <h3>Aralık Hızlı Okuma Grubu</h3>
-
           <div class="price">6.000 TL</div>
 
           <p class="details">
@@ -1481,7 +1131,6 @@ footer a{color:#a9ddff}
             1.500 TL, 6.000 TL üzerinden düşülür.
             Kalan tutar 4.500 TL olur.
           </p>
-
         </div>
 
         <a
@@ -1489,33 +1138,22 @@ footer a{color:#a9ddff}
           target="_blank"
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-        >
-          Kayıt Ol
-        </a>
-
+        >Kayıt Ol</a>
       </article>
 
       <!-- BİREBİR -->
 
       <article class="program reveal">
-
         <div class="program-content">
-
-          <div class="program-label">
-            ÖĞRENCİYE ÖZEL
-          </div>
-
+          <div class="program-label">ÖĞRENCİYE ÖZEL</div>
           <h3>Birebir Hızlı Okuma Eğitimi</h3>
-
           <div class="price">18.500 TL</div>
 
           <p class="details">
             18 ders saati · Birebir Online Özel Ders
           </p>
 
-          <p>
-            18 ders saati ile birebir hızlı okuma.
-          </p>
+          <p>18 ders saati ile birebir hızlı okuma.</p>
 
           <p>
             Birebir dersler için size uygun
@@ -1534,7 +1172,6 @@ footer a{color:#a9ddff}
             Öğrencinin öğrenme ritmine göre
             planlanan birebir dersler.
           </p>
-
         </div>
 
         <a
@@ -1542,36 +1179,25 @@ footer a{color:#a9ddff}
           target="_blank"
           rel="noopener"
           href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-        >
-          Kayıt Ol
-        </a>
-
+        >Kayıt Ol</a>
       </article>
 
     </div>
-
   </div>
 </section>
 
-<!-- SONUÇLAR -->
+<!-- SONUÇLAR: YENİ GÖRSEL VE YENİ SIRALAMA -->
 
 <section id="sonuclar" class="section-soft">
   <div class="container">
-
     <div class="center reveal">
-
-      <div class="eyebrow">
-        Öğrenci deneyimleri
-      </div>
-
-      <h2 class="gradient-heading">
-        Nasıl Sonuçlar Alıyoruz?
-      </h2>
-
+      <div class="eyebrow">Öğrenci deneyimleri</div>
+      <h2 class="gradient-heading">Nasıl Sonuçlar Alıyoruz?</h2>
     </div>
 
     <div class="results">
 
+      <!-- 1. ESKİ İLK GÖRSEL -->
       <div class="result-card reveal">
         <img
           src="copy_57B79F44-DDEC-4CC7-A57A-3F453B5ED086.JPEG"
@@ -1580,40 +1206,52 @@ footer a{color:#a9ddff}
         >
       </div>
 
+      <!-- 2. YENİ EKLENEN GÖRSEL -->
       <div class="result-card reveal">
         <img
-          src="panel-1.jpg"
-          alt="Veli yorumu 1"
+          src="IMG_1697.jpg"
+          alt="Yeni öğrenci sonucu"
           loading="lazy"
         >
       </div>
 
-      <div class="result-card reveal">
-        <img
-          src="panel-2.jpg"
-          alt="Veli yorumu 2"
-          loading="lazy"
-        >
-      </div>
-
+      <!-- 3. ESKİ DÖRDÜNCÜ GÖRSEL -->
       <div class="result-card reveal">
         <img
           src="panel-3.jpg"
-          alt="Veli yorumu 3"
+          alt="Veli yorumu"
           loading="lazy"
         >
       </div>
 
+      <!-- 4. ESKİ ÜÇÜNCÜ GÖRSEL -->
+      <div class="result-card reveal">
+        <img
+          src="panel-2.jpg"
+          alt="Veli yorumu"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- 5. ESKİ İKİNCİ GÖRSEL -->
+      <div class="result-card reveal">
+        <img
+          src="panel-1.jpg"
+          alt="Veli yorumu"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- 6. ESKİ BEŞİNCİ GÖRSEL -->
       <div class="result-card reveal">
         <img
           src="panel-4.jpg"
-          alt="Veli yorumu 4"
+          alt="Veli yorumu"
           loading="lazy"
         >
       </div>
 
     </div>
-
   </div>
 </section>
 
@@ -1621,7 +1259,6 @@ footer a{color:#a9ddff}
 
 <section class="final">
   <div class="container">
-
     <h2 class="reveal">
       Hiçbir öğrenci okuduğunu anlamadan,
       soru yorumlama becerisi kazanmadan
@@ -1632,9 +1269,7 @@ footer a{color:#a9ddff}
 
     <h2 class="reveal">
       Çocuğunuzun okuma becerilerini geliştirmek için
-      <span class="highlight yellow">
-        ilk adımı atın.
-      </span>
+      <span class="highlight yellow">ilk adımı atın.</span>
     </h2>
 
     <p class="reveal">
@@ -1645,17 +1280,12 @@ footer a{color:#a9ddff}
     </p>
 
     <div class="final-actions reveal">
-
-      <!-- SON KAYIT OL BUTONUNDA OK İŞARETİ YOK -->
-
       <a
         class="btn"
         target="_blank"
         rel="noopener"
         href="https://docs.google.com/forms/d/e/1FAIpQLSde04IktO_30EtR0YiftRv-5Ut0KZnp7Wbp1k7kHRcJJhq29w/viewform?usp=header"
-      >
-        Kayıt Ol
-      </a>
+      >Kayıt Ol</a>
 
       <a
         class="btn btn-whatsapp"
@@ -1668,19 +1298,16 @@ footer a{color:#a9ddff}
         </svg>
         WhatsApp'tan Bilgi Al
       </a>
-
     </div>
-
   </div>
 </section>
 
 </main>
 
-<!-- ALT BİLGİ -->
+<!-- FOOTER -->
 
 <footer>
   <div class="container footer-row">
-
     <div class="footer-brand">
       <img src="IMG_1617.jpg" alt="Yazılı Hazırlık logosu">
       <span>Yazılı Hazırlık</span>
@@ -1695,14 +1322,11 @@ footer a{color:#a9ddff}
       href="https://www.instagram.com/yazili.hazirlik/"
       target="_blank"
       rel="noopener"
-    >
-      Instagram
-    </a>
-
+    >Instagram</a>
   </div>
 </footer>
 
-<!-- SABİT WHATSAPP BALONCUĞU -->
+<!-- SABİT WHATSAPP -->
 
 <a
   class="floating-wa"
